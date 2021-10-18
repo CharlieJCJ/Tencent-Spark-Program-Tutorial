@@ -21,7 +21,6 @@ os.rmdir('new_directory')
 #*************************************#
 # os的好处：批量化处理文件数据
 # 举例：Create many folders at the same time
-
 """
 for i in range(1, 11):
     os.makedirs(f'My folder {i}')
