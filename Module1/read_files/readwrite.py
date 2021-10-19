@@ -20,7 +20,7 @@ with open('the_adventures_of_sherlock_holmes.txt', 'r') as f:
 with open('the_adventures_of_sherlock_holmes.txt', 'r') as f:    
     f_contents = f.read() # 这会把整个txt文件全部放在一个string里
 
-print("书籍的前200个字符:\n", f_contents[:200])  # 看前100个字符
+print("书籍的前200个字符:\n", f_contents[:200])  # 看前200个字符
 
 #*************************************#
 # 4. `<file>.readlines()` readlines() 用于读取文件中的所有行，
