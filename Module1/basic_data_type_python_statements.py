@@ -1,5 +1,7 @@
 # Warmup python exercises
 # 对于基础python语句复习回顾
+import os
+
 
 #*************************************#
 # 1. Primitive data types
@@ -57,6 +59,15 @@ my_list = [1, 3, 5, 7]
 for item in my_list:
     print(f"Item {item}")
 
+# for循环实例：print出当前目录所有文件的完整路径
+print("\n\nComplete path of every file in current directory:")
+
+for file in os.listdir():
+    print(os.path.join(os.getcwd(), file))
+
+# 更多关于os库的使用例子请再os_library/os.py 中自行阅读！
+
+#*************************************#
 # 6. 非常实用的`enumerate`函数，如果我们同时需要列表中的索引和元素值
 for index, item in enumerate(my_list):
     print(f"Index {index} of list is {item}")
@@ -66,4 +77,5 @@ a = 2
 b = 3
 print(f"{a} + {b} = {a + b}")
 print(str(a) + " + " + str(b) + " = " + str(a + b))   # 比较一下用f string和string concatenation代码的不同
+
 #*************************************#
