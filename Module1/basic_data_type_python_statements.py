@@ -62,8 +62,8 @@ print("After removing 7 from the list", my_list)
 # 除了append, remove; list还有很多其他list manipulation的函数, 比如insert, extend, pop 等
 
 #*************************************#
-my_list = [1, 3, 5, 7]
 # 5. for能遍历整个python列表
+my_list = [1, 3, 5, 7]
 
 for item in my_list:
     print(f"Item {item}")
