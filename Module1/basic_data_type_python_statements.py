@@ -31,8 +31,8 @@ def square(x):
 # 使用函数
 result = square(3)  # result should be 9
 print(result)
-#*************************************#
 
+#*************************************#
 # 4. list python列表：一种序列，序列中的每个值都有对应的位置值，称之为索引，第一个索引是0，第二个索引是1，依此类推。
 my_list = [1, 3, 5, 7]
 print(my_list[0]) # 第一个元素 --> 1
@@ -52,6 +52,7 @@ my_list.remove(7)    # 把元素(7)从python列表中去除 [1, 3, 5, 7, 9] --> 
 print("After removing 7 from the list", my_list)
 
 # 除了append, remove; list还有很多其他list manipulation的函数, 比如insert, extend, pop 等
+
 #*************************************#
 my_list = [1, 3, 5, 7]
 # 5. for能遍历整个python列表
