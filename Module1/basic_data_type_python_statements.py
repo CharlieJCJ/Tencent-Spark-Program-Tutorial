@@ -27,12 +27,13 @@ for i in range(10):   # range(10) 代表着0～9的所有整数， 10不包括; 
 def square(x):
     return x * x
 
-# function call expression
+# 调用函数 function call expression
 # 使用函数
 num = 3
 result = square(num)  # result should be 9
 print(f"The square of {num} is {result}")
 
+# 函数可以能处理多个变量参数
 def rectangular_area(height, width):
     return height * width
 
