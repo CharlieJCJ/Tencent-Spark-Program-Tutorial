@@ -29,8 +29,15 @@ def square(x):
 
 # function call expression
 # 使用函数
-result = square(3)  # result should be 9
-print(result)
+num = 3
+result = square(num)  # result should be 9
+print(f"The square of {num} is {result}")
+
+def rectangular_area(height, width):
+    return height * width
+
+area = rectangular_area(3, 4)
+print(f"Rectangle area is {area}")
 
 #*************************************#
 # 4. list python列表：一种序列，序列中的每个值都有对应的位置值，称之为索引，第一个索引是0，第二个索引是1，依此类推。
