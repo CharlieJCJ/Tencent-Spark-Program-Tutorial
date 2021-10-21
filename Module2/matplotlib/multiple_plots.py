@@ -10,22 +10,22 @@ y2 = [45372, 48876, 53850, 57287, 63016,
 
 # plot 函数里有许多参数可以自定义图表
 # 使用蓝色的、连续的、宽度为 2.5 （像素）的线条
-# color - 线条颜色
-# linewidth - 线条宽度
-# linestyle - 线条风格 可以尝试 {'-', '--', '-.', ':'} 等
-# marker - 样本点标记样式 可以尝试 {'.', ',', 'o', 'p', 'x'} 等
+# `color` - 线条颜色
+# `linewidth` - 线条宽度
+# `linestyle` - 线条风格 可以尝试 {'-', '--', '-.', ':'} 等
+# `marker` - 样本点标记样式 可以尝试 {'.', ',', 'o', 'p', 'x'} 等
 
 plt.plot(x, y1, label = "All developer", color="blue", linewidth=2.5, linestyle="-", marker = ".")
 plt.plot(x, y2, label = "Python developer", color="red", linewidth=2.5, linestyle="--", marker = "p")
 
 #*************************************#
 # plt 自定义属性
-# xlabel - x坐标轴标注
-# ylabel - y坐标轴标注
-# title - 图像标题
-# xlim - 设置横轴的上下限
-# ylim - 设置纵轴的上下限
-# legend - 图例位置
+# `xlabel` - x坐标轴标注
+# `ylabel` - y坐标轴标注
+# `title` - 图像标题
+# `xlim` - 设置横轴的上下限
+# `ylim` - 设置纵轴的上下限
+# `legend` - 图例位置
 
 plt.xlabel('Ages')
 plt.ylabel('Median Salary (USD) 2019')
