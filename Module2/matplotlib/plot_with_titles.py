@@ -9,10 +9,10 @@ y = [38496, 42000, 46752, 49320, 53200,
 plt.plot(x, y)
 
 #*************************************#
-# plt 自定义属性
-# xlabel - x坐标轴标注
-# ylabel - y坐标轴标注
-# title - 图像标题
+# plt 基础自定义属性
+# `xlabel` - x坐标轴标注
+# `ylabel` - y坐标轴标注
+# `title` - 图像标题
 
 plt.xlabel('Ages')
 plt.ylabel('Median Salary (USD) in 2019')
