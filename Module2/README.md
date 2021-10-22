@@ -24,4 +24,6 @@ from matplotlib import pyplot as plt
    - 选取其中的 `Age` 列，进行直方图的绘制
 6. `im_show.py`
    - 使用 `opencv` 结合 `os.path.join` 读取图片数据
-   - 
+   - 可以更改图片路径和读取图片模式
+   - 用`plt.imshow()`来显示图片
+   - 为cv库开一个头，之后会对于cv库的其他功能做展开
