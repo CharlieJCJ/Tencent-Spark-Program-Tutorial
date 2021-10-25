@@ -15,5 +15,3 @@ plt.plot(x, y)
 
 # `plt.show()` 将图标在屏幕上显示
 plt.show()
-
-
