@@ -13,6 +13,7 @@ https://cs61a.org/articles/debugging/#common-bugs
 # Error Types
 ## 1. SyntaxError
 **Cause**: code syntax mistake
+
 **Example**:
 
 ```python
