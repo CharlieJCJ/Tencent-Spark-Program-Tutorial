@@ -44,7 +44,28 @@ Numpy is in this example 54.22188995215311 faster!
 ![Memory](/Module3/numpy/img/6411635634299_.pic_hd.jpg)
 
 3. 更多功能
-   - 通过numpy、卷积、快速搜索、基本统计、线性代数、柱状图等，您可以获得比列表很更内置功能。
+   - 通过numpy做卷积、快速搜索、基本统计、线性代数、柱状图等，您可以获得比列表很更内置功能。
 ![Function](/Module3/numpy/img/6481635645902_.pic_hd.jpg)
-4. 允许逐个元素的基础运算
-![elementwise](/Module3/numpy/img/6451635634658_.pic_hd.jpg)
+
+## `列表` (list) and `numpy array 数组` 计算时的不同的特征：
+
+```python
+>>> import numpy as np
+
+>>> np.array([1,2]) + np.array([3,4])
+array([4, 6])
+>>> [1, 2] + [3, 4]
+[1, 2, 3, 4]
+
+>>> np.array([1,2]) * np.array([3,4])
+array([3, 8])
+>>> [1, 2] * [3, 4]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: can't multiply sequence by non-int of type 'list'
+
+>>> np.array([1,2]) * 2
+array([2, 4])
+>>> [1, 2] * 2
+[1, 2, 1, 2]
+```
