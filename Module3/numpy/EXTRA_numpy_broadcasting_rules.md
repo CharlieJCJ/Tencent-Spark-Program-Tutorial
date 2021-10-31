@@ -1,6 +1,7 @@
 # Broadcast（广播）的规则
-[source](https://zhuanlan.zhihu.com/p/35010592)
-![Markdown logo]("/../WechatIMG647.png")
+[source website](https://zhuanlan.zhihu.com/p/35010592)
+
+![Markdown logo](/Module3/numpy/WechatIMG647.png)
 * All input arrays with ndim smaller than the input array of largest ndim, have 1’s prepended to their shapes.
 * The size in each dimension of the output shape is the maximum of all the input sizes in that dimension.
 * An input can be used in the calculation if its size in a particular dimension either matches the output size in that dimension, or has value exactly 1.
