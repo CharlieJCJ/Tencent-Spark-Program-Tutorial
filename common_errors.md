@@ -1,4 +1,5 @@
-[Original Reference](https://cs61a.org/articles/debugging/#common-bugs)
+Original Reference (UC Berkeley CS61a Fall 2021):
+https://cs61a.org/articles/debugging/#common-bugs
 - [Error Types](#error-types)
   - [1. SyntaxError](#1-syntaxerror)
   - [2. IndentationError](#2-indentationerror)
