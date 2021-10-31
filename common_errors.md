@@ -1,4 +1,14 @@
 [Original Reference](https://cs61a.org/articles/debugging/#common-bugs)
+- [Error Types](#error-types)
+  - [1. SyntaxError](#1-syntaxerror)
+  - [2. IndentationError](#2-indentationerror)
+  - [3. TypeError](#3-typeerror)
+  - [4. NameError](#4-nameerror)
+  - [5. IndexError](#5-indexerror)
+- [Common Bugs](#common-bugs)
+  - [1. Spelling](#1-spelling)
+  - [3. Missing close quotes](#3-missing-close-quotes)
+  - [6. Off-by-one errors](#6-off-by-one-errors)
 # Error Types
 ## 1. SyntaxError
 **Cause**: code syntax mistake
