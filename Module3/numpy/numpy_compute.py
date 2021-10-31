@@ -2,7 +2,7 @@
 # 大量的维度数组与矩阵运算，此外也针对数组运算提供大量的数学函数库。
 # `NumPy array` - 新的数据结构 ndarray (n-dimensional array)，N 维数组
 
-# NumPy 数组，矩阵计算
+# NumPy 数组基础运算，简单矩阵乘法
 
 import numpy as np
 
