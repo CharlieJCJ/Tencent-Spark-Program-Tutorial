@@ -54,7 +54,9 @@
   - 转置矩阵 `<NumPy array>.T`
   - `numpy.dot()`对于两个一维的数组，计算的是这两个数组对应下标元素的乘积和(数学上称之为内积)
   - `numpy.inner()` 函数返回一维数组的向量内积
-## 4. 常见错误 (copy)
+## 4. 常见错误 (当需要复制np array的时候的注意事项)
   `copy_notice.py`
+
+NOTE: 当两个数组指向同一个数组，当其中一个受到了更改，另一个的值也受到了更改
 ## 5. 【应用】cv2 import的图片是使用 numpy array 来表示的
 `numpy_in_cv2.py`
