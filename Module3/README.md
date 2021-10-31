@@ -40,7 +40,7 @@
 `numpy_compute.py`
 - Element-wise computation
 - NumPy 广播 Broadcast 机制
-  - 更多关于 NumPy broadcast 请阅读 EXTRA_numpy_broadcasting_rules.md 文件请阅读官方文件： https://numpy.org/doc/stable/user/basics.broadcasting.html
+  - 更多关于 NumPy broadcast 请阅读 `EXTRA_numpy_broadcasting_rules.md` 文件请阅读官方文件： https://numpy.org/doc/stable/user/basics.broadcasting.html
 
 - Mathematics
   - 三角函数
