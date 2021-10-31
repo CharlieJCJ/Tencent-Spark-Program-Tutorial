@@ -9,6 +9,8 @@ https://cs61a.org/articles/debugging/#common-bugs
 - [Common Bugs](#common-bugs)
   - [1. Spelling](#1-spelling)
   - [3. Missing close quotes](#3-missing-close-quotes)
+  - [4. = vs. ==](#4--vs-)
+  - [5. Infinite Loops](#5-infinite-loops)
   - [6. Off-by-one errors](#6-off-by-one-errors)
 # Error Types
 ## 1. SyntaxError
@@ -121,14 +123,14 @@ File "file name", line "number"
 SyntaxError: EOL while scanning string literal
 EOL stands for "End of Line."
 ```
-##4. = vs. ==
+## 4. = vs. ==
 The single equal sign = is used for assignment; the double equal sign == is used for testing equivalence. The most common error of this form is something like:
 
 ```python
 if x = 3:
 ```
 
-##5. Infinite Loops
+## 5. Infinite Loops
 Infinite loops are often caused by while loops whose conditions never change. For example:
 ```python
 i = 0
