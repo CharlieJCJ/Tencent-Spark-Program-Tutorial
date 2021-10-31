@@ -9,7 +9,7 @@ import numpy as np
 # a: 1D array
 a = np.array([1,2,3])
 print(a)
-# b: a 2D array
+# b: 2D array
 b = np.array([[9.0,8.0,7.0],[6.0,5.0,4.0]])
 print(b)
 
