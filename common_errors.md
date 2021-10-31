@@ -28,7 +28,9 @@ SyntaxError: invalid syntax
 **Notes**: Python will check for SyntaxErrors before executing any code. This is different from other errors, which are only raised during runtime.
 
 ## 2. IndentationError
+
 **Cause**: improper indentation
+
 **Example**:
 ```python
   File "file name", line number
@@ -70,7 +72,9 @@ TypeError: add expected 2 arguments, got 1
 ```
 
 ## 4. NameError
+
 **Cause**: variable not assigned to anything OR it doesn't exist. This includes function names.
+
 **Example**:
 
 ```python
@@ -83,6 +87,7 @@ NameError: global name 'x' is not defined
 
 ## 5. IndexError
 **Cause**: trying to index a sequence (e.g. a tuple, list, string) with a number that exceeds the size of the sequence.
+
 **Example**:
 
 ```python
