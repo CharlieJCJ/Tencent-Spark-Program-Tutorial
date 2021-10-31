@@ -6,14 +6,14 @@
 
 
 
-`list_vs_numpy.md`
+[`list_vs_numpy.md`](/Module3/numpy/list_vs_numpy.md)
 - 速度快 (Numpy的并行化运算)
 - NumPy数据结构内存占用小
 - 更多功能 (卷积、快速搜索、基本统计、线性代数、柱状图等，您可以获得比列表很更内置功能。)
 - 允许逐个元素的基础运算
 
 ## 2. NumPy 基础
-`numpy_intro.py`
+[`numpy_intro.py`](/Module3/numpy/numpy_intro.py)
 - 创建数组 Initialize numpy arrays 
   - 1D array
   - 2D array
@@ -37,10 +37,10 @@
   - `numpy.reshape` 函数可以在不改变数据的条件下修改形状
   - `numpy.ndarray.flatten` 返回一份数组拷贝，对拷贝所做的修改不会影响原始数组
 ## 3. NumPy 数组基础运算，简单矩阵乘法
-`numpy_compute.py`
+[`numpy_compute.py`](/Module3/numpy/numpy_compute.py)
 - Element-wise computation
 - NumPy 广播 Broadcast 机制
-  - 更多关于 NumPy broadcast 请阅读 `EXTRA_numpy_broadcasting_rules.md` 文件请阅读官方文件： https://numpy.org/doc/stable/user/basics.broadcasting.html
+  - 更多关于 NumPy broadcast 请阅读 [`EXTRA_numpy_broadcasting_rules.md`](/Module3/numpy/EXTRA_numpy_broadcasting_rules.md) 文件请阅读官方文件： https://numpy.org/doc/stable/user/basics.broadcasting.html
 
 - Mathematics
   - 三角函数
@@ -55,8 +55,8 @@
   - `numpy.dot()`对于两个一维的数组，计算的是这两个数组对应下标元素的乘积和(数学上称之为内积)
   - `numpy.inner()` 函数返回一维数组的向量内积
 ## 4. 常见错误 (当需要复制np array的时候的注意事项)
-  `copy_notice.py`
+  [`copy_notice.py`](/Module3/numpy/copy_notice.py)
 
 NOTE: 当两个数组指向同一个数组，当其中一个受到了更改，另一个的值也受到了更改
 ## 5. 【应用】cv2 import的图片是使用 numpy array 来表示的
-`numpy_in_cv2.py`
+[`numpy_in_cv2.py`](/Module3/numpy/numpy_in_cv2.py)
