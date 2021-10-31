@@ -42,7 +42,6 @@ a[0, :]
 # Get a specific column
 a[:, 2]
 
-
 # Changing specific elements, rows, columns
 a[1,5] = 20
 print(a)
@@ -61,7 +60,7 @@ z = np.full((2,2), 99)
 print(z)
 
 
-# 随机数数组
+## 随机数数组
 # Random decimal numbers
 np.random.rand(4,2)
 
@@ -75,3 +74,31 @@ np.identity(5)
 arr = np.array([[1,2,3]])
 r1 = np.repeat(arr, 3, axis=0)       # axis = 0 
 print(r1)
+
+#
+#*************************************#
+# 4. Numpy 数组操作， 包含了一些函数用于处理数组
+
+# `numpy.reshape` 函数可以在不改变数据的条件下修改形状
+# numpy.reshape(arr, newshape, order='C')
+a = np.arange(8)
+print ('原始数组：')
+print (a)
+print ('\n')
+ 
+b = a.reshape(4,2)
+print ('修改后的数组：')
+print (b)
+
+
+# `numpy.ndarray.flatten` 返回一份数组拷贝，对拷贝所做的修改不会影响原始数组
+# ndarray.flatten(order='C')
+print ('原数组：')
+print (a)
+print ('\n')
+
+# 默认按行
+print ('展开的数组：')
+print (a.flatten())
+print ('\n')
+
