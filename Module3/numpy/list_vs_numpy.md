@@ -45,6 +45,6 @@ Numpy is in this example 54.22188995215311 faster!
 
 3. 更多功能
    - 通过numpy、卷积、快速搜索、基本统计、线性代数、柱状图等，您可以获得比列表很更内置功能。
-![Function](/Module3/numpy/img/6431635634620_.pic_hd.jpg)
+![Function](/Module3/numpy/img/6481635645902_.pic_hd.jpg)
 4. 允许逐个元素的基础运算
 ![elementwise](/Module3/numpy/img/6451635634658_.pic_hd.jpg)
