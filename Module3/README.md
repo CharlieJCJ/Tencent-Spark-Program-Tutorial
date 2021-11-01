@@ -4,13 +4,11 @@
 
 ## 1. 理解在处理大数据问题上为什么推荐使用NumPy，而不是列表
 
-
-
 [`list_vs_numpy.md`](/Module3/numpy/list_vs_numpy.md)
 - 速度快 (Numpy的并行化运算)
 - NumPy数据结构内存占用小
 - 更多功能 (卷积、快速搜索、基本统计、线性代数、柱状图等，您可以获得比列表很更内置功能。)
-- 允许逐个元素的基础运算
+- `列表` (list) and `numpy array 数组` 计算时的不同的特征
 
 ## 2. NumPy 基础
 [`numpy_intro.py`](/Module3/numpy/numpy_intro.py)
