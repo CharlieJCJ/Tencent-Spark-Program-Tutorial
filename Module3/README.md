@@ -2,6 +2,8 @@
  NumPy(Numerical Python) 是 Python 语言的一个扩展程序库，支持大量的维度数组与矩阵运算，此外也针对数组运算提供大量的数学函数库。
 `Numpy array` - 新的数据结构 ndarray (n-dimensional array)，N 维数组
 
+**课程目的**：为图片存储数据格式 3维矩阵 (width, height, channel) ，图片矩阵卷积计算，神经网络计算打基础
+
 ## 1. 理解在处理大数据问题上为什么推荐使用NumPy，而不是列表
 
 [`list_vs_numpy.md`](/Module3/numpy/list_vs_numpy.md)
