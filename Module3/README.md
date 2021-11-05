@@ -36,7 +36,7 @@
 - Numpy 数组操作， 包含了一些函数用于处理数组
   - `numpy.reshape` 函数可以在不改变数据的条件下修改形状
   - `numpy.ndarray.flatten` 返回一份数组拷贝，对拷贝所做的修改不会影响原始数组
-## 3. NumPy 数组基础运算，简单矩阵乘法
+## 3. NumPy 数组运算，矩阵乘法
 [`numpy_compute.py`](/Module3/numpy/numpy_compute.py)
 - Element-wise computation
 - NumPy 广播 Broadcast 机制
