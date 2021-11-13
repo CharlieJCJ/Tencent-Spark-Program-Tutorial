@@ -8,17 +8,17 @@
 
 import numpy as np
 from matplotlib import pyplot as plt
-from math import *
+import math
 
 # feature vector
 x = np.array([1, 3])       # 可以想像这是一个点，有 (x, y) 坐标
 weights = np.array([2, 4]) # 假设这是训练好的权重 weights [w1, w2] 对应 feature vector 的两个 feature
 bias = 1                   # bias是一个常量，它和weights都是一个可训练的参数
+                           # 神经元的计算公式: w1 * x + x2 * y + bias 
 
 # Compute output (without activation layer) -> `activation layer` 之后会讲到
 result = np.dot(x, weights) + bias
 print(f'{repr(x)} * {repr(weights)} + {bias} = {result}')
-
 
 
 
@@ -37,13 +37,16 @@ def sigmoid(num):
 
 input = range(-100, 100)
 plt.plot(input, list(map(sign, input)))
+plt.title('sign activation function')
 plt.show()
 plt.plot(input, list(map(relu, input)))
+plt.title('relu activation function')
 plt.show()
 plt.plot(input, list(map(sigmoid, input)))
+plt.title('sigmoid activation function')
 plt.show()
 
-# 拓展：如果输出层有多个(> 1)神经元呢？如何计算结果？(需要矩阵乘法的知识)
+# 拓展：如果输出层有多个(> 1)神经元呢？如何计算结果？(需要矩阵乘法的知识) - (同学们自行尝试)
 x = np.array([1, 3]) 
 weights = np.array([[2, 4], 
                     [3, 5]]) 

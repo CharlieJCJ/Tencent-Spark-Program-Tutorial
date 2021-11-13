@@ -10,16 +10,18 @@ def cost(x):
     return 1/30 * (x + 3) * (x - 2)**2 * (x - 5)
 
 
-my_guess = -1.8   # 我觉得 cost function 在 x = ... 的时候是最少的  (可以尝试10 -> 12 -> 8 -> 3 -> 0 -> -4 -> -2 -> -1.8)
+my_guess = 10  # 我觉得 cost function 在 x = ... 的时候是最少的  (可以尝试10 -> 12 -> 8 -> 3 -> 0 -> -4 -> -2 -> -1.8)
 print(cost(my_guess))
 
 
-# Numerical optimization
+# Numerical optimization. What's the absolute minimum of this function? 
+# Uncomment below and check it out!
+'''
 result = minimize(cost, 0)
 solution = result['x']
 evaluation = cost(solution)
 print(f"Solution: f({solution}) = {evaluation}")
-
+'''
 
 # What does the graph look like? Uncomment below and check it out!
 '''
