@@ -25,8 +25,6 @@ import pandas as pd
 
 建议配合使用网页版 interactive demo 演示矩阵乘法过程：http://matrixmultiplication.xyz/
 ![matmul1](/Module4/img/Matmul1.png)
-![matmul2](/Module4/img/Matmul2.png)
-![matmul3](/Module4/img/Matmul3.png)
 
 ## 2. 感知机运算 (Perceptron calculation)
 
