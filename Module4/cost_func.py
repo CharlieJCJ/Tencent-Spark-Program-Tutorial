@@ -1,4 +1,4 @@
-# 损失函数 cost_func 
+# 损失函数 cost function
 import math
 import numpy as np
 import pandas as pd

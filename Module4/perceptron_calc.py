@@ -35,6 +35,10 @@ def relu(x):
 def sigmoid(num):
 	return  1/(1+math.e**(-num))
 
+activated_result = sigmoid(result)
+print(f'Result after passing into activation layer: {activated_result}') # 将神经元计算的结果放入激活层
+
+# 思考一下激活层对于输出结果有着什么样的影响？
 input = range(-100, 100)
 plt.plot(input, list(map(sign, input)))
 plt.title('sign activation function')
