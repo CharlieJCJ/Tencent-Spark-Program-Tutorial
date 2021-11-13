@@ -72,5 +72,5 @@ result = np.dot(weights, x) + bias
 print(f'\nx = {repr(x)} has shape {x.shape}\nweights = {repr(weights)} has shape {weights.shape}\nbias = {repr(bias)} has shape {bias.shape}\n{result} has shape {result.shape}\n')
 print(f'{repr(x)} * {repr(weights)} + {repr(bias)} = {result}')
 
-activated_result = list(map(sigmoid, result))
+activated_result = list(map(sign, result))
 print(f'Result {result} after passing into activation layer: {activated_result}') # 将神经元计算的结果放入激活层
