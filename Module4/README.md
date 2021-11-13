@@ -1,4 +1,4 @@
-# Module 4 Introduction to opencv library and kernal matrix calculation
+# Module 4 矩阵乘法，感知机 Perceptron (单层神经网络), 神经网络demo
 
 使用到的库 (课前需要提前安装好)：
 ```python
