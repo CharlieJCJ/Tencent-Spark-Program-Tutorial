@@ -60,8 +60,9 @@ RMSE - root mean squared error
 人工智能会帮我们最小化损失函数，让预测值变得越来越准确
 1. 使用网页版 interactive demo 演示神经网络训练过程：https://playground.tensorflow.org/#activation=relu&batchSize=1&dataset=gauss&regDataset=reg-plane&learningRate=0.00001&regularizationRate=0&noise=35&networkShape=&seed=0.17057&showTestData=false&discretize=true&percTrainData=50&x=true&y=true&xTimesY=false&xSquared=false&ySquared=false&cosX=false&sinX=false&cosY=false&sinY=false&collectStats=false&problem=classification&initZero=false&hideText=false
 ![Tensorflow playground](/Module4/img/Tensorflow.png)
-2. 代码 demo，观察一下如何用python代码实现感知机的训练
+2. *代码 demo*，观察一下如何用python代码实现感知机的训练
 [`perceptron_1layer.py`](perceptron_1layer.py)
    1. 不需要讲解此代码，直接让同学run，会有visualization的demo，演示用代码实现的训练神经网络过程
-
+![perceptron_demo](/Module4/img/perceptron_Demo.png)
+![perceptron_loss](/Module4/img/perceptron_loss.png)
 *预告*：下节课我们会 **【浅谈 梯度下降】** 了解人工智能如何最小化损失函数，以及**介绍【多层神经网络】**
