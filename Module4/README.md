@@ -64,4 +64,4 @@ RMSE - root mean squared error
 [`perceptron_1layer.py`](perceptron_1layer.py)
    1. 不需要讲解此代码，直接让同学run，会有visualization的demo，演示用代码实现的训练神经网络过程
 
-预告：下节课我们会【浅谈 梯度下降】了解人工智能如何最小化损失函数，以及 介绍【多层神经网络】
+*预告*：下节课我们会 **【浅谈 梯度下降】** 了解人工智能如何最小化损失函数，以及**介绍【多层神经网络】**
