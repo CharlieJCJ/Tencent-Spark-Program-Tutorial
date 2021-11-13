@@ -21,7 +21,7 @@ print(f'{repr(x)} * {repr(weights)} + {bias} = {result}')
 
 
 
-# 什么是激活层
+# 什么是激活层 
 def sign(x):
     if x >= 0:
         return 1
