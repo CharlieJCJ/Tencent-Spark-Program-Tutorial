@@ -1,5 +1,15 @@
 # Module 5: First classification task
 
+
+使用到的库 (课前需要提前安装好)：
+```python
+from matplotlib import pyplot as plt
+import numpy as np
+import math
+from sklearn import datasets
+from scipy.optimize import *
+import pandas as pd
+```
 ## 1.浅谈 梯度下降 (gradient descent)
 
 [`gradient_descent_student.py`](/Module5/gradient_descent_student.py)
