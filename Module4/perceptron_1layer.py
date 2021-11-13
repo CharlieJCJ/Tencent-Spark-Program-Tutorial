@@ -37,8 +37,8 @@ def plot(num, prediction):
 
 
 	plt.subplot(1, 2, 2)
-	plt.scatter(x[prediction <0.5], y[prediction <0.5], label = "0", c = "red", )
-	plt.scatter(x[prediction >=0.5], y[prediction >=0.5], label = "1", c = "blue")
+	plt.scatter(x[prediction < 0.5], y[prediction < 0.5], label = "0", c = "red", )
+	plt.scatter(x[prediction >= 0.5], y[prediction >= 0.5], label = "1", c = "blue")
 	plt.legend(loc='lower left')
 	plt.title(f'Epoch {num}')
 	plt.show()
@@ -64,7 +64,7 @@ def predict(row, weights):
 	result = weights[0] # add the bias term
 	for i in range(len(row)-1):
 		result += weights[i + 1] * row[i] # calculates a weight sum
-	return step_function(result)
+	return sigmoid(result)
 
 # Estimate Perceptron weights using stochastic gradient descent
 def train_weights(train, l_rate, n_epoch):
@@ -86,8 +86,8 @@ def train_weights(train, l_rate, n_epoch):
 	return weights, errors
 
 # Calculate weights
-l_rate = 0.01
-n_epoch = 15
+l_rate = 0.02
+n_epoch = 10
 weights, errors = train_weights(dataset, l_rate, n_epoch)
 print(weights)
 

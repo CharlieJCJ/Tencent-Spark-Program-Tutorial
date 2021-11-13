@@ -8,6 +8,7 @@
 
 import numpy as np
 from matplotlib import pyplot as plt
+from math import *
 
 # feature vector
 x = np.array([1, 3])       # 可以想像这是一个点，有 (x, y) 坐标
@@ -31,10 +32,15 @@ def sign(x):
 def relu(x):
     return max(0, x)
 
+def sigmoid(num):
+	return  1/(1+math.e**(-num))
+
 input = range(-100, 100)
 plt.plot(input, list(map(sign, input)))
 plt.show()
 plt.plot(input, list(map(relu, input)))
+plt.show()
+plt.plot(input, list(map(sigmoid, input)))
 plt.show()
 
 # 拓展：如果输出层有多个(> 1)神经元呢？如何计算结果？(需要矩阵乘法的知识)
