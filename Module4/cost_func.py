@@ -1,4 +1,8 @@
 # 损失函数 cost function
+# 损失函数用来评价模型的预测值和真实值不一样的程度。
+# 损失函数结果越小，通常模型的性能越好。
+# 所以在机器学习问题中通常都会遇到 - 【寻找损失函数最小值问题】
+
 import math
 import numpy as np
 import pandas as pd
@@ -13,7 +17,6 @@ d = {'y_actual':y_actual,
 
 df = pd.DataFrame(data = d)
 print(repr(df))
-
 
 
 MSE = np.square(np.subtract(y_actual,y_predicted)).mean() 

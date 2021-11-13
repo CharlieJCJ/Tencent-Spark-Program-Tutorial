@@ -7,27 +7,17 @@ import math
 from sklearn import datasets
 
 # Dataset
-dataset = np.array([[2.7810836,2.550537003,0],
-	[1.465489372,2.362125076,0],
-	[3.396561688,4.400293529,0],
-	[1.38807019,1.850220317,0],
-	[3.06407232,3.005305973,0],
-	[7.627531214,2.759262235,1],
-	[5.332441248,2.088626775,1],
-	[6.922596716,1.77106367,1],
-	[8.675418651,-0.242068655,1],
-	[7.673756466,3.508563011,1]])
 train, label = datasets.make_blobs(n_samples=500,n_features=2,
                            centers=2,cluster_std=1.5,
                            random_state=2)
 
 global x, y, z 
-# x, y, z = dataset[:, 0], dataset[:, 1], dataset[:, 2]
 x, y, z = train[:, 0], train[:, 1], label
 dataset = [[x[i], y[i], z[i]] for i in range(len(x))]
+l_rate = 0.02
+n_epoch = 10
 
-
-
+# Helper plot function
 def plot(num, prediction):
 	plt.subplot(1, 2, 1)
 	plt.scatter(x[z <0.5], y[z <0.5], label = "0", c = "red", )
@@ -43,6 +33,8 @@ def plot(num, prediction):
 	plt.title(f'Epoch {num}')
 	plt.show()
 
+
+# *** Activation functions: *** #
 # Step-function (a threshold)
 def step_function(num):
 	return 1.0 if num >= 0.0 else 0.0
@@ -55,9 +47,11 @@ def relu(num):
 def sigmoid(num):
 	return  1/(1+math.e**(-num))
 
-# Linear activation function
+# Linear function
 def identity(num):
 	return num
+
+# ****************************** # 
 
 # Make a prediction with weights
 def predict(row, weights):
@@ -86,8 +80,6 @@ def train_weights(train, l_rate, n_epoch):
 	return weights, errors
 
 # Calculate weights
-l_rate = 0.02
-n_epoch = 10
 weights, errors = train_weights(dataset, l_rate, n_epoch)
 print(weights)
 
