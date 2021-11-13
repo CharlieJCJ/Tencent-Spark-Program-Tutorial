@@ -55,7 +55,7 @@ RMSE - root mean squared error
 1. 使用 numpy 函数从公式出发，计算数据集的RMSE
 2. 使用sklearn library 的 `mean_squared_error` 函数
 
-## 5. 神经网络训练 demo
+## 4. 神经网络训练 demo
 
 人工智能会帮我们最小化损失函数，让预测值变得越来越准确
 1. 使用网页版 interactive demo 演示神经网络训练过程：https://playground.tensorflow.org/#activation=relu&batchSize=1&dataset=gauss&regDataset=reg-plane&learningRate=0.00001&regularizationRate=0&noise=35&networkShape=&seed=0.17057&showTestData=false&discretize=true&percTrainData=50&x=true&y=true&xTimesY=false&xSquared=false&ySquared=false&cosX=false&sinX=false&cosY=false&sinY=false&collectStats=false&problem=classification&initZero=false&hideText=false
