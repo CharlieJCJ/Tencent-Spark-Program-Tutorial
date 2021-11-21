@@ -25,20 +25,23 @@ import plotly.graph_objects as go
    1. activation function(weights * x + bias)
 2. 激活层
    1. 思考一下激活层对于输出结果有着什么样的影响？
-3. 多个神经元计算 （如果输出层有多个(> 1), 比如，两神经元呢？如何计算结果？(需要矩阵乘法的知识)）
+
+*Extra*: 多个神经元计算 （如果输出层有多个(> 1), 比如，两神经元呢？如何计算结果？(需要矩阵乘法的知识)）
 
 ## 2. 浅谈 损失函数 (cost function)
 推荐教学时长：10分钟
 
 [`cost_func_init.py`](/Module5/cost_func/cost_func_init.py)
+- 用线性回归的问题（用一条直线去表达现有数据）来引入损失函数的概念，可以变化斜率，观察一下损失的值是如何变化的
 
 ![cost_func_init](/Module5/img/cost1.png)
 [`cost_func_visualize.py`](/Module5/cost_func/cost_func_visualize.py)
+- 同学经过一些`cost_func_init.py`尝试，`cost_func_visualize.py`会把所有斜率的可能性枚举，并用`line plot`做可视化，程序只需要跑一遍即可
 
 ![cost_func_visualize](/Module5/img/cost2.png)
-
 [`3d_cost_function_visualization.py`](/Module5/cost_func/3d_cost_function_visualization.py)
-
+- 不需要理解代码，只作为可视化功能
+- 对于 >1 变量的cost function（这里有两个变量，所以cost function的graph是三维的）的可视化
 ![3d_cost_function_visualization](/Module5/img/cost3.png)
 
 ## 3. 使用 `pytorch` 库搭建你的第一个神经网络
