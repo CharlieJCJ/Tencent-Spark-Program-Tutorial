@@ -6,6 +6,7 @@
 import math
 import numpy as np
 import pandas as pd
+from IPython.display import display
 
 y_actual = np.array([1,2,3,4,5])
 y_predicted = np.array([1.6,2.5,2.9,3,4.1])
@@ -16,7 +17,7 @@ d = {'y_actual':y_actual,
     'squared error': (y_actual-y_predicted)**2}
 
 df = pd.DataFrame(data = d)
-print(repr(df))
+display(df)
 
 
 MSE = np.square(np.subtract(y_actual,y_predicted)).mean() 
