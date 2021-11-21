@@ -13,10 +13,10 @@ import plotly.graph_objects as go
 ```
 
 ## 1. 感知机运算 (Perceptron calculation)
+推荐教学时长：15分钟
 
 [`perceptron_calc.py`](/Module5/perceptron_calc.py)
 
-推荐教学时长：15分钟
 感知机（Perceptron）: 感知机是神经网络（深度学习）的起源算法，学习感知机的构造是通向神经网络和深度学习的一种重要思想。
 感知机是 *二类分类* 的线性分类模型，由输入特征 x 得到输出类别 1 或 0 的函数。它只有一层输出层，一个神经元。从这个文件中我们将会学会如何将输入特征进行单个神经元的计算。
 学习完了计算，我们会浅谈损失函数，梯度下降在神经网络中的作用
@@ -28,19 +28,44 @@ import plotly.graph_objects as go
 3. 多个神经元计算 （如果输出层有多个(> 1), 比如，两神经元呢？如何计算结果？(需要矩阵乘法的知识)）
 
 ## 2. 浅谈 损失函数 (cost function)
-[`cost_func_init.py`](/Module5/cost_func/cost_func_init.py)
-[`cost_func_visualize.py`](/Module5/cost_func/cost_func_visualize.py)
-[`3d_cost_function_visualization.py`](/Module5/cost_func/3d_cost_function_visualization.py)
 推荐教学时长：10分钟
+
+[`cost_func_init.py`](/Module5/cost_func/cost_func_init.py)
+
+![cost_func_init](/Module5/img/cost1.png)
+[`cost_func_visualize.py`](/Module5/cost_func/cost_func_visualize.py)
+
+![cost_func_visualize](/Module5/img/cost2.png)
+
+[`3d_cost_function_visualization.py`](/Module5/cost_func/3d_cost_function_visualization.py)
+
+![3d_cost_function_visualization](/Module5/img/cost3.png)
 
 ## 3. 使用 `pytorch` 库搭建你的第一个神经网络
 推荐教学时长：15分钟
+1. 训练，测试数据
+   1. 使用 torch.utils.data 模块的 Dataset
+2. 将整个数据集分成训练集和测试集
+3. 定义神经网络结构
+4. 设置训练模型，参数
+   1. optimizer 就是优化器，包含了需要优化的参数有哪些，
+   2. loss_func 就是我们设置的损失函数
+   3. och 是指所有数据被训练的总轮数
+5. 训练模型
+   1. # 使用当前模型 <训练的参数> 去预测数据相对应的标签 (label)，即 `前向传播`
+   2. `criterion()` 计算【损失函数】结果， (output, target) 作为输入 (output为网络的输出,target为实际值)
+   3. `loss.backward` 反向传播 - 利用损失函数反向传播计算梯度
+   4. `optimizer.step` 梯度下降，更新模型参数 - 用我们定义的优化器将每个需要优化的参数进行更新
+   5. 在训练过程中print出来训练中的损失函数结果（观察损失函数的变化）
+6. 测试模型
+7. 模型在 <训练集> 和 <测试集> 上的表现可视化
+[`pytorch_perceptron.py`](pytorch_perceptron.py)
 
-
+![pytorch](/Module5/img/pytorch1.png)
 ## EXTRA 浅谈 梯度下降 (gradient descent) - 【学生自行阅读】
 
-[`gradient_descent_student.py`](/Module5/gradient_descent_student.py)
-[`gradient_descent_demo.py`](/Module5/gradient_descent_demo.py)
+[`gradient_descent_student.py`](/Module5/gradient_descent/gradient_descent_student.py)
+[`gradient_descent_demo.py`](/Module5/gradient_descent/gradient_descent_demo.py)
 
 1. `gradient_descent_student.py`
    1. 告诉学生们通常在机器学习，人工智能场景下，会出现非常复杂的损失函数，但是在计算他的最小值，用传统数学方法是很难求解的。所以我们可以利用numerical optimization方法中的一种 - 梯度下降的方法找到函数最小值（有些时候找到的是函数局部最小值）

@@ -8,15 +8,15 @@ import numpy as np
 import math
 import matplotlib.pyplot as plt
 
-# Helper plot function
-def plot(data, prediction):
-    x = data.x[:, 0]
-    y = data.x[:, 1]
+# Helper plot function (将训练后结果做可视化)
+def plot(data, prediction, mode = "Train"):
+    x = data[0][:, 0]
+    y = data[0][:, 1]
     plt.subplot(1, 2, 1)
-    plt.scatter(x[data.y <0.5], y[data.y <0.5], label = "0", c = "red")
-    plt.scatter(x[data.y >=0.5], y[data.y >=0.5], label = "1", c = "blue")
+    plt.scatter(x[data[1] <0.5], y[data[1] <0.5], label = "0", c = "red")
+    plt.scatter(x[data[1] >=0.5], y[data[1] >=0.5], label = "1", c = "blue")
     plt.legend(loc='lower left')
-    plt.title("True Dataset")
+    plt.title(mode)
 
     plt.subplot(1, 2, 2)
     plt.scatter(x[prediction < 0.5], y[prediction < 0.5], label = "0", c = "red")
@@ -26,12 +26,12 @@ def plot(data, prediction):
     plt.show()
     return
 #  ****************************************************************  #
-# 训练，测试数据
+# 1. 训练，测试数据
 # 使用 torch.utils.data 模块的 Dataset
 class PointsDataset(Dataset):
     def __init__(self):
-        x, y = make_blobs(n_samples=1000, centers=2, n_features=2, cluster_std=2, shuffle=True)
-        self.x = torch.FloatTensor(x)
+        x, y = make_blobs(n_samples=1000, centers=2, n_features=2, cluster_std=1.5, shuffle=True)
+        self.x = torch.FloatTensor(x)    # 格式转换（numpy to tensor）
         self.y = torch.FloatTensor(y)
         self.n_samples = y.shape[0]
     def __getitem__(self, index):
@@ -43,22 +43,23 @@ class PointsDataset(Dataset):
 # 我们的数据集
 dataset = PointsDataset()
 
-
-
-firstdata = dataset[0]
+'''
+first_row = dataset[0] # first row
 features, labels = firstdata
 print(features, labels)
 print(len(firstdata))
+'''
 
-# 训练集和测试集
+#  ****************************************************************  #
+# 2. 将整个数据集分成训练集和测试集
 train_data, test_data = random_split(dataset, [800, 200])
 batch_size = 5
-dataloader = DataLoader(dataset = dataset, batch_size = batch_size, shuffle = True)
-total_sample = len(dataset)
+dataloader = DataLoader(dataset = train_data, batch_size = batch_size, shuffle = True)
+total_sample = len(train_data)
 num_iteration = math.ceil(total_sample/batch_size)
 
 #  ****************************************************************  #
-# 定义神经网络
+# 3. 定义神经网络结构
 class Perceptron(torch.nn.Module):
     def __init__(self):
         super(Perceptron, self).__init__()
@@ -85,7 +86,7 @@ class MLP(torch.nn.Module): # 下节课 Module 6 的内容
             output = self.sigmoid(output)
             return output
 #  ****************************************************************  #
-# 设置训练模型，参数
+# 4. 设置训练模型，参数
 # optimizer 就是优化器，包含了需要优化的参数有哪些，
 # loss_func 就是我们设置的损失函数
 # epoch 是指所有数据被训练的总轮数
@@ -97,38 +98,47 @@ optimizer = torch.optim.SGD(model.parameters(), lr = 0.01)
 num_epoch = 10
 
 #  ****************************************************************  #
-# 训练模型
+# 5. 训练模型
 model.train()
 for epoch in range(num_epoch):
     for i, (inputs, labels) in enumerate(dataloader):
         optimizer.zero_grad()
-        # Forward pass
+
+        # 使用当前模型 <训练的参数> 去预测数据相对应的标签 (label)，即 `前向传播`
         y_pred = model(inputs)
-        # `criterion()` 计算【损失函数】结果， (output, target)作为输入(output为网络的输出,target为实际值)
+
+        # `criterion()` 计算【损失函数】结果， (output, target) 作为输入 (output为网络的输出,target为实际值)
         loss = criterion(y_pred.squeeze(), labels)
+
         # `loss.backward` 反向传播 - 利用损失函数反向传播计算梯度
         loss.backward()
+
         # `optimizer.step` 梯度下降，更新模型参数 - 用我们定义的优化器将每个需要优化的参数进行更新
         optimizer.step()
-        # 在训练过程中print出来训练中的损失函数结果（观察
+
+        # 在训练过程中print出来训练中的损失函数结果（观察损失函数的变化）
         if (i + 1) % 5 == 0:
             print(f"epoch {epoch + 1}/{num_epoch}, step {i + 1}/{num_iteration}, train loss {loss.item()}")
 
 
 #  ****************************************************************  #
-# 测试模型
+# 6. 测试模型
+train_set, test_set = dataset[train_data.indices], dataset[test_data.indices]
+
 model.eval()
-y_pred = model(test_data.dataset.x)
-after_train = criterion(y_pred.squeeze(), test_data.dataset.y)
-print('Test loss after Training' , after_train.item())
+y_pred = model(test_set[0])
+after_train = criterion(y_pred.squeeze(), test_set[1])
+print('Test loss after Training', after_train.item())
 
 #  ****************************************************************  #
 # (optional) print 模型训练后的模型参数 - weights, bias
+print("模型训练后的模型参数:")
 for name, param in model.named_parameters():
     if param.requires_grad:
         print(name, param.data)
 
-
 #  ****************************************************************  #
-# 模型在测试集上的表现可视化
-plot(test_data.dataset, y_pred.squeeze())
+# 7. 模型在 <训练集> 和 <测试集> 上的表现可视化
+plot(train_set, model(train_set[0]).squeeze(), "Train set")
+plot(test_set, y_pred.squeeze(), "Test set")
+
