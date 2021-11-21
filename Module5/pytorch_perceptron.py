@@ -1,3 +1,4 @@
+#  ****************************************************************  #
 import torch 
 # CREATE RANDOM DATA POINTS
 from sklearn.datasets import make_blobs
@@ -6,20 +7,6 @@ from torchsummary import summary
 import numpy as np
 import math
 import matplotlib.pyplot as plt
-
-class PointsDataset(Dataset):
-    def __init__(self):
-        x, y = make_blobs(n_samples=1000, centers=2, n_features=2, cluster_std=2, shuffle=True)
-        self.x = torch.FloatTensor(x)
-        self.y = torch.FloatTensor(y)
-        self.n_samples = y.shape[0]
-    def __getitem__(self, index):
-        return self.x[index], self.y[index]
-
-    def __len__(self):
-        return self.n_samples
-
-dataset = PointsDataset()
 
 # Helper plot function
 def plot(data, prediction):
@@ -38,20 +25,40 @@ def plot(data, prediction):
     plt.title("After training")
     plt.show()
     return
+#  ****************************************************************  #
+# 训练，测试数据
+# 使用 torch.utils.data 模块的 Dataset
+class PointsDataset(Dataset):
+    def __init__(self):
+        x, y = make_blobs(n_samples=1000, centers=2, n_features=2, cluster_std=2, shuffle=True)
+        self.x = torch.FloatTensor(x)
+        self.y = torch.FloatTensor(y)
+        self.n_samples = y.shape[0]
+    def __getitem__(self, index):
+        return self.x[index], self.y[index]
 
-# Testing
+    def __len__(self):
+        return self.n_samples
+
+# 我们的数据集
+dataset = PointsDataset()
+
+
+
 firstdata = dataset[0]
 features, labels = firstdata
 print(features, labels)
 print(len(firstdata))
 
-# Use DataLoader
+# 训练集和测试集
 train_data, test_data = random_split(dataset, [800, 200])
 batch_size = 5
 dataloader = DataLoader(dataset = dataset, batch_size = batch_size, shuffle = True)
 total_sample = len(dataset)
 num_iteration = math.ceil(total_sample/batch_size)
 
+#  ****************************************************************  #
+# 定义神经网络
 class Perceptron(torch.nn.Module):
     def __init__(self):
         super(Perceptron, self).__init__()
@@ -62,9 +69,9 @@ class Perceptron(torch.nn.Module):
         output = self.sigmoid(output) # instead of Heaviside step fn
         return output
 
-class MLP(torch.nn.Module):
+class MLP(torch.nn.Module): # 下节课 Module 6 的内容
         def __init__(self, input_size, hidden_size):
-            super(Feedforward, self).__init__()
+            super(MLP, self).__init__()
             self.input_size = input_size
             self.hidden_size  = hidden_size
             self.fc1 = torch.nn.Linear(self.input_size, self.hidden_size)
@@ -77,39 +84,51 @@ class MLP(torch.nn.Module):
             output = self.fc2(relu)
             output = self.sigmoid(output)
             return output
+#  ****************************************************************  #
+# 设置训练模型，参数
+# optimizer 就是优化器，包含了需要优化的参数有哪些，
+# loss_func 就是我们设置的损失函数
+# epoch 是指所有数据被训练的总轮数
 
 model = Perceptron()
-# model = MLP(2, 20)
+# model = MLP(2, 20) # 下节课 Module 6 的内容
 criterion = torch.nn.MSELoss()
 optimizer = torch.optim.SGD(model.parameters(), lr = 0.01)
-
-
-model.train()
 num_epoch = 10
+
+#  ****************************************************************  #
+# 训练模型
+model.train()
 for epoch in range(num_epoch):
     for i, (inputs, labels) in enumerate(dataloader):
         optimizer.zero_grad()
         # Forward pass
         y_pred = model(inputs)
-        # Compute Loss
+        # `criterion()` 计算【损失函数】结果， (output, target)作为输入(output为网络的输出,target为实际值)
         loss = criterion(y_pred.squeeze(), labels)
-        # Backward pass
+        # `loss.backward` 反向传播 - 利用损失函数反向传播计算梯度
         loss.backward()
+        # `optimizer.step` 梯度下降，更新模型参数 - 用我们定义的优化器将每个需要优化的参数进行更新
         optimizer.step()
+        # 在训练过程中print出来训练中的损失函数结果（观察
         if (i + 1) % 5 == 0:
-            print(f"epoch {epoch + 1}/{num_epoch}, step {i + 1}/{num_iteration}, inputs {inputs.shape}, train loss {loss.item()}")
+            print(f"epoch {epoch + 1}/{num_epoch}, step {i + 1}/{num_iteration}, train loss {loss.item()}")
 
 
-
+#  ****************************************************************  #
+# 测试模型
 model.eval()
 y_pred = model(test_data.dataset.x)
 after_train = criterion(y_pred.squeeze(), test_data.dataset.y)
 print('Test loss after Training' , after_train.item())
-# print(y_pred >= 0.5)
+
+#  ****************************************************************  #
+# (optional) print 模型训练后的模型参数 - weights, bias
 for name, param in model.named_parameters():
     if param.requires_grad:
         print(name, param.data)
 
 
-
+#  ****************************************************************  #
+# 模型在测试集上的表现可视化
 plot(test_data.dataset, y_pred.squeeze())
