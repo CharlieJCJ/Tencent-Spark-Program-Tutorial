@@ -13,7 +13,7 @@ import plotly.graph_objects as go
 ```
 
 ## 1. 感知机运算 (Perceptron calculation)
-推荐教学时长：15分钟
+***推荐教学时长：15分钟***
 
 [`perceptron_calc.py`](/Module5/perceptron_calc.py)
 
@@ -29,7 +29,7 @@ import plotly.graph_objects as go
 *Extra*: 多个神经元计算 （如果输出层有多个(> 1), 比如，两神经元呢？如何计算结果？(需要矩阵乘法的知识)）
 
 ## 2. 浅谈 损失函数 (cost function)
-推荐教学时长：10分钟
+***推荐教学时长：10分钟***
 
 [`cost_func_init.py`](/Module5/cost_func/cost_func_init.py)
 - 用线性回归的问题（用一条直线去表达现有数据）来引入损失函数的概念，可以变化斜率，观察一下损失的值是如何变化的
@@ -45,7 +45,7 @@ import plotly.graph_objects as go
 ![3d_cost_function_visualization](/Module5/img/cost3.png)
 
 ## 3. 使用 `pytorch` 库搭建你的第一个神经网络
-推荐教学时长：15分钟
+***推荐教学时长：15分钟***
 1. 训练，测试数据
    1. 使用 torch.utils.data 模块的 Dataset
 2. 将整个数据集分成训练集和测试集
