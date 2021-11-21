@@ -9,6 +9,7 @@ import math
 from sklearn import datasets
 from scipy.optimize import *
 import pandas as pd
+import plotly.graph_objects as go
 ```
 
 ## 1. 感知机运算 (Perceptron calculation)
@@ -32,7 +33,7 @@ import pandas as pd
 [`3d_cost_function_visualization.py`](/Module5/cost_func/3d_cost_function_visualization.py)
 推荐教学时长：10分钟
 
-## 3. 使用 pytorch 库搭建你的第一个神经网络
+## 3. 使用 `pytorch` 库搭建你的第一个神经网络
 推荐教学时长：15分钟
 
 
@@ -53,4 +54,3 @@ import pandas as pd
 建议配合使用网页版 interactive demo 演示梯度下降过程：https://uclaacm.github.io/gradient-descent-visualiser/#playground
 ![gradient descent](/Module5/img/gradient_desc.png)
 
-参考资料：
