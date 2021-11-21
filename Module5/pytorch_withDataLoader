@@ -1,0 +1,109 @@
+import torch 
+# CREATE RANDOM DATA POINTS
+from sklearn.datasets import make_blobs
+from torch.utils.data import Dataset, DataLoader, random_split
+from torchsummary import summary
+import numpy as np
+import math
+import matplotlib as plt
+
+class PointsDataset(Dataset):
+    def __init__(self):
+        x, y = make_blobs(n_samples=1000, centers=2, n_features=2, cluster_std=1.5, shuffle=True)
+        self.x = torch.FloatTensor(x)
+        self.y = torch.FloatTensor(y)
+        self.n_samples = y.shape[0]
+    def __getitem__(self, index):
+        return self.x[index], self.y[index]
+
+    def __len__(self):
+        return self.n_samples
+
+dataset = PointsDataset()
+
+
+# Testing
+firstdata = dataset[0]
+features, labels = firstdata
+print(features, labels)
+print(len(firstdata))
+
+# Use DataLoader
+train_data, test_data = random_split(dataset, [800, 200])
+batch_size = 5
+dataloader = DataLoader(dataset = dataset, batch_size = batch_size, shuffle = True)
+total_sample = len(dataset)
+num_iteration = math.ceil(total_sample/batch_size)
+
+class Perceptron(torch.nn.Module):
+    def __init__(self):
+        super(Perceptron, self).__init__()
+        self.fc = torch.nn.Linear(2,1)
+        self.sigmoid = torch.nn.Sigmoid() # instead of Heaviside step fn
+    def forward(self, x):
+        output = self.fc(x)
+        output = self.sigmoid(output) # instead of Heaviside step fn
+        return output
+
+class Feedforward(torch.nn.Module):
+        def __init__(self, input_size, hidden_size):
+            super(Feedforward, self).__init__()
+            self.input_size = input_size
+            self.hidden_size  = hidden_size
+            self.fc1 = torch.nn.Linear(self.input_size, self.hidden_size)
+            self.relu = torch.nn.ReLU()
+            self.fc2 = torch.nn.Linear(self.hidden_size, 1)
+            self.sigmoid = torch.nn.Sigmoid()
+        def forward(self, x):
+            hidden = self.fc1(x)
+            relu = self.relu(hidden)
+            output = self.fc2(relu)
+            output = self.sigmoid(output)
+            return output
+
+# model = Feedforward(2, 10)
+model = Perceptron()
+criterion = torch.nn.BCELoss()
+optimizer = torch.optim.SGD(model.parameters(), lr = 0.01)
+
+model.train()
+num_epoch = 10
+for epoch in range(num_epoch):
+    for i, (inputs, labels) in enumerate(dataloader):
+        optimizer.zero_grad()
+        # Forward pass
+        y_pred = model(inputs)
+        # Compute Loss
+        # print(y_pred, y_pred.squeeze(), labels)
+        loss = criterion(y_pred.squeeze(), labels)
+        # Backward pass
+        loss.backward()
+        optimizer.step()
+        if (i + 1) % 5 == 0:
+            print(f"epoch {epoch + 1}/{num_epoch}, step {i + 1}/{num_iteration}, inputs {inputs.shape}, train loss {loss.item()}")
+
+
+
+model.eval()
+y_pred = model(test_data.dataset.x)
+after_train = criterion(y_pred.squeeze(), test_data.dataset.y)
+print('Test loss after Training' , after_train.item())
+# print(y_pred >= 0.5)
+for name, param in model.named_parameters():
+    if param.requires_grad:
+        print(name, param.data)
+
+# Helper plot function
+def plot(data, prediction):
+	plt.subplot(1, 2, 1)
+	plt.scatter(data.x[z <0.5], data.y[z <0.5], label = "0", c = "red", )
+	plt.scatter(data.x[z >=0.5], data.y[z >=0.5], label = "1", c = "blue")
+	plt.legend(loc='lower left')
+	plt.title("True Dataset")
+
+
+	plt.subplot(1, 2, 2)
+	plt.scatter(data.x[prediction < 0.5], data.y[prediction < 0.5], label = "0", c = "red", )
+	plt.scatter(data.x[prediction >= 0.5], data.y[prediction >= 0.5], label = "1", c = "blue")
+	plt.legend(loc='lower left')
+	plt.show()
