@@ -10,7 +10,28 @@ from sklearn import datasets
 from scipy.optimize import *
 import pandas as pd
 ```
-## 1.浅谈 梯度下降 (gradient descent)
+
+## 1. 感知机运算 (Perceptron calculation)
+
+[`perceptron_calc.py`](/Module5/perceptron_calc.py)
+
+感知机（Perceptron）: 感知机是神经网络（深度学习）的起源算法，学习感知机的构造是通向神经网络和深度学习的一种重要思想。
+感知机是 *二类分类* 的线性分类模型，由输入特征 x 得到输出类别 1 或 0 的函数。它只有一层输出层，一个神经元。从这个文件中我们将会学会如何将输入特征进行单个神经元的计算。
+学习完了计算，我们会浅谈损失函数，梯度下降在神经网络中的作用
+![perceptron](/Module5/img/perceptron.png)
+1. Perceptron 一个神经元的计算
+   1. activation function(weights * x + bias)
+2. 激活层
+   1. 思考一下激活层对于输出结果有着什么样的影响？
+3. 多个神经元计算 （如果输出层有多个(> 1), 比如，两神经元呢？如何计算结果？(需要矩阵乘法的知识)）
+
+## 2. 损失函数 (cost function)
+[`cost_func_init.py`](/Module5/cost_func/cost_func_init.py)
+[`cost_func_visualize.py`](/Module5/cost_func/cost_func_visualize.py)
+[`3d_cost_function_visualization.py`](/Module5/cost_func/3d_cost_function_visualization.py)
+
+
+## 3.浅谈 梯度下降 (gradient descent)
 
 [`gradient_descent_student.py`](/Module5/gradient_descent_student.py)
 [`gradient_descent_demo.py`](/Module5/gradient_descent_demo.py)
@@ -26,3 +47,5 @@ import pandas as pd
     ![gradient demo](/Module5/img/Snipaste_2021-11-12_22-57-24.png)
 建议配合使用网页版 interactive demo 演示梯度下降过程：https://uclaacm.github.io/gradient-descent-visualiser/#playground
 ![gradient descent](/Module5/img/gradient_desc.png)
+
+3. 使用 pytorch 库搭建你的第一个神经网络
