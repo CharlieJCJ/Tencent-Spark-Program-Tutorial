@@ -10,6 +10,7 @@ from scipy.optimize import *
 import pandas as pd
 ```
 ## 1. 矩阵乘法 (Matrix multiplication)
+***推荐教学时长：10分钟***
 
 [`matrix_multiplication.py`](/Module4/matrix_multiplication.py)
 1. 向量的点乘 Vector dot product
@@ -27,6 +28,7 @@ import pandas as pd
 ![matmul1](/Module4/img/Matmul1.png)
 
 ## 2. 感知机运算 (Perceptron calculation)
+***推荐教学时长：20分钟***
 
 [`perceptron_calc.py`](/Module4/perceptron_calc.py)
 
@@ -41,6 +43,7 @@ import pandas as pd
 3. 多个神经元计算 （如果输出层有多个(> 1), 比如，两神经元呢？如何计算结果？(需要矩阵乘法的知识)）
    
 ## 3. 损失函数 (cost function)
+***推荐教学时长：7分钟***
 
 [`cost_func.py`](/Module4/cost_func.py)
 
@@ -56,6 +59,7 @@ RMSE - root mean squared error
 2. 使用sklearn library 的 `mean_squared_error` 函数
 
 ## 4. 神经网络训练 demo
+***推荐教学时长：8分钟***
 
 人工智能会帮我们最小化损失函数，让预测值变得越来越准确
 1. 使用网页版 interactive demo 演示神经网络训练过程：https://playground.tensorflow.org/#activation=relu&batchSize=1&dataset=gauss&regDataset=reg-plane&learningRate=0.00001&regularizationRate=0&noise=35&networkShape=&seed=0.17057&showTestData=false&discretize=true&percTrainData=50&x=true&y=true&xTimesY=false&xSquared=false&ySquared=false&cosX=false&sinX=false&cosY=false&sinY=false&collectStats=false&problem=classification&initZero=false&hideText=false
