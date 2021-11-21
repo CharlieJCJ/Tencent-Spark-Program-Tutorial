@@ -55,7 +55,7 @@ import plotly.graph_objects as go
    2. loss_func 就是我们设置的损失函数
    3. epoch 是指所有数据被训练的总轮数
 5. 训练模型
-   1. # 使用当前模型 <训练的参数> 去预测数据相对应的标签 (label)，即 `前向传播`
+   1. 使用当前模型 <训练的参数> 去预测数据相对应的标签 (label)，即 `前向传播`
    2. `criterion()` 计算【损失函数】结果， (output, target) 作为输入 (output为网络的输出,target为实际值)
    3. `loss.backward` 反向传播 - 利用损失函数反向传播计算梯度
    4. `optimizer.step` 梯度下降，更新模型参数 - 用我们定义的优化器将每个需要优化的参数进行更新
