@@ -5,7 +5,7 @@ from sklearn.metrics import mean_squared_error as mse
 # 这是一个线性回归的问题，用一条直线去表达现有数据
 # 可以变化slope的值，观察一下cost function的值是如何变化的
 # making lines for different Values of Beta 0.1, 0.8, 1.5
-slope = 0.1
+slope = 1.
 
 # keeping intercept constant
 b = 1.1
