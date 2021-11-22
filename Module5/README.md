@@ -44,28 +44,9 @@ import plotly.graph_objects as go
 - 对于 >1 变量的cost function（这里有两个变量，所以cost function的graph是三维的）的可视化
 ![3d_cost_function_visualization](/Module5/img/cost3.png)
 
-## 3. 使用 `pytorch` 库搭建你的第一个神经网络
-***推荐教学时长：15分钟***
-1. 训练，测试数据
-   1. 使用 torch.utils.data 模块的 Dataset
-2. 将整个数据集分成训练集和测试集
-3. 定义神经网络结构
-4. 设置训练模型，参数
-   1. optimizer 就是优化器，包含了需要优化的参数有哪些，
-   2. loss_func 就是我们设置的损失函数
-   3. epoch 是指所有数据被训练的总轮数
-5. 训练模型
-   1. 使用当前模型 <训练的参数> 去预测数据相对应的标签 (label)，即 `前向传播`
-   2. `criterion()` 计算【损失函数】结果， (output, target) 作为输入 (output为网络的输出,target为实际值)
-   3. `loss.backward` 反向传播 - 利用损失函数反向传播计算梯度
-   4. `optimizer.step` 梯度下降，更新模型参数 - 用我们定义的优化器将每个需要优化的参数进行更新
-   5. 在训练过程中print出来训练中的损失函数结果（观察损失函数的变化）
-6. 测试模型
-7. 模型在 <训练集> 和 <测试集> 上的表现可视化
-[`pytorch_perceptron.py`](pytorch_perceptron.py)
 
-![pytorch](/Module5/img/pytorch1.png)
-## EXTRA 浅谈 梯度下降 (gradient descent) - 【学生自行阅读】
+## 3. 浅谈 梯度下降 (gradient descent) - 【学生自行阅读】
+***推荐教学时长：15分钟***
 
 [`gradient_descent_student.py`](/Module5/gradient_descent/gradient_descent_student.py)
 [`gradient_descent_demo.py`](/Module5/gradient_descent/gradient_descent_demo.py)
@@ -78,7 +59,23 @@ import plotly.graph_objects as go
     3. 我在python文件里有两段代码，一个是标题写着`Numerical optimization. What's the absolute minimum of this function? `可以找到任何函数的最小值。另一个写着`What does the graph look like? Uncomment below and check it out!`可以将`cost`函数 plot 出来
 2. `gradient_descent_demo.py`
    1. 不需要讲解此代码，直接让同学run，会有visualization的demo，演示gradient descent的过程
+   2. 
     ![gradient demo](/Module5/img/Snipaste_2021-11-12_22-57-24.png)
 建议配合使用网页版 interactive demo 演示梯度下降过程：https://uclaacm.github.io/gradient-descent-visualiser/#playground
 ![gradient descent](/Module5/img/gradient_desc.png)
 
+### 神经网络基本流程小结：
+1. 搭建神经网络结构
+2. 前向传播（感知机运算）
+3. 计算损失函数 (cost function)
+4. 梯度下降（如果对这个内容感兴趣，同学可以搜索关键词**反向传播，偏导数计算**）
+
+## 4. 用 python `Pytorch` 实现的感知机演示
+[`pytorch_perceptron.py`](pytorch_perceptron.py)
+
+NOTE: 每次运行程序生成的数据都是随机的，所以每次分类结果都会不一样
+![pytorch](/Module5/img/pytorch1.png)
+
+
+
+***之后的内容***：训练集/测试集，模型准确率，多层神经网络，卷积神经网络
