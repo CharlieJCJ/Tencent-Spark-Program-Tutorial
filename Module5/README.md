@@ -15,7 +15,7 @@ import plotly.graph_objects as go
 ## 1. 感知机运算 (Perceptron calculation)
 ***推荐教学时长：15分钟***
 
-[`perceptron_calc.py`](/Module5/perceptron_calc.py)
+### [`perceptron_calc.py`](/Module5/perceptron_calc.py)
 
 感知机（Perceptron）: 感知机是神经网络（深度学习）的起源算法，学习感知机的构造是通向神经网络和深度学习的一种重要思想。
 感知机是 *二类分类* 的线性分类模型，由输入特征 x 得到输出类别 1 或 0 的函数。它只有一层输出层，一个神经元。从这个文件中我们将会学会如何将输入特征进行单个神经元的计算。
@@ -63,7 +63,7 @@ MSE - mean squared error
 ## 3. 浅谈 梯度下降 (gradient descent)
 ***推荐教学时长：10分钟***
 
-[`gradient_descent_demo.py`](/Module5/gradient_descent/gradient_descent_demo.py)
+### [`gradient_descent_demo.py`](/Module5/gradient_descent/gradient_descent_demo.py)
 
 
 1. `gradient_descent_demo.py`
@@ -81,7 +81,7 @@ MSE - mean squared error
 4. 梯度下降（如果对这个内容感兴趣，同学可以搜索关键词**反向传播，偏导数计算**）
 
 ## 4. 用 python `Pytorch` 实现的感知机演示 demo
-[`pytorch_perceptron.py`](pytorch_perceptron.py)
+### [`pytorch_perceptron.py`](pytorch_perceptron.py)
 
 NOTE: 每次运行程序生成的数据都是随机的，所以每次分类结果都会不一样
 ![pytorch](/Module5/img/pytorch1.png)
