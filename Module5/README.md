@@ -32,7 +32,7 @@ import plotly.graph_objects as go
 ![perceptron_calc](/Module5/img/perceptron_calc.png)
 ## 2. 浅谈 损失函数 (cost function)
 ***推荐教学时长：15分钟***
-###[`cost_func.py`](/Module4/cost_func.py)
+### [`cost_func.py`](/Module4/cost_func.py)
 
 * 损失函数 cost function
 * 损失函数用来评价模型的预测值和真实值不一样的程度。
