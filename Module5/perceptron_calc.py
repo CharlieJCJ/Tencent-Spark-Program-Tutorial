@@ -20,7 +20,7 @@ bias = 1                                         # bias是一个常量，它和w
 
 # Compute output (without activation layer) -> `activation layer` 之后会讲到
 result = np.dot(weights, x) + bias
-print(f'{repr(x)} * {repr(weights)} + {bias} = {result}')
+print(f'{repr(weights)} * {repr(x)} + {bias} = {result}')
 
 #*******************************************************************#
 # 2. 激活层
@@ -69,8 +69,8 @@ bias = np.array([1, 2]); bias = bias.reshape(-1, 1)
 result = np.dot(weights, x) + bias
 
 
-print(f'\nx = {repr(x)} has shape {x.shape}\nweights = {repr(weights)} has shape {weights.shape}\nbias = {repr(bias)} has shape {bias.shape}\n{result} has shape {result.shape}\n')
-print(f'{repr(x)} * {repr(weights)} + {repr(bias)} = {result}')
+print(f'\nweights = {repr(weights)} has shape {weights.shape}\nx = {repr(x)} has shape {x.shape}\nbias = {repr(bias)} has shape {bias.shape}\n{result} has shape {result.shape}\n')
+print(f'{repr(weights)} * {repr(x)} + {repr(bias)} = {result}')
 
 activated_result = list(map(sign, result))
 print(f'Result {result} after passing into activation layer: {activated_result}') # 将神经元计算的结果放入激活层
