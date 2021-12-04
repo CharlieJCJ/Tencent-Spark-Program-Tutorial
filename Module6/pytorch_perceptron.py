@@ -8,6 +8,11 @@ import numpy as np
 import math
 import matplotlib.pyplot as plt
 
+# 0. 超参数
+LR = 0.01
+num_epoch = 10
+batch_size = 5   # 这个先不用讲解
+
 # Helper plot function (将训练后结果做可视化)
 def plot(data, prediction, mode = "Train"):
     x = data[0][:, 0]
@@ -53,7 +58,6 @@ print(len(firstdata))
 #  ****************************************************************  #
 # 2. 将整个数据集分成训练集和测试集
 train_data, test_data = random_split(dataset, [800, 200])
-batch_size = 5
 dataloader = DataLoader(dataset = train_data, batch_size = batch_size, shuffle = True)
 total_sample = len(train_data)
 num_iteration = math.ceil(total_sample/batch_size)
@@ -94,8 +98,7 @@ class MLP(torch.nn.Module):
 model = Perceptron()
 # model = MLP(2, 20) # 下节课 Module 6 的内容
 criterion = torch.nn.MSELoss()
-optimizer = torch.optim.SGD(model.parameters(), lr = 0.01)
-num_epoch = 10
+optimizer = torch.optim.SGD(model.parameters(), lr = LR)
 
 #  ****************************************************************  #
 # 5. 训练模型
@@ -105,7 +108,7 @@ for epoch in range(num_epoch):
         optimizer.zero_grad()
 
         # 使用当前模型 <训练的参数> 去预测数据相对应的标签 (label)，即 `前向传播`
-        y_pred = model(inputs)
+        y_pred = model.forward(inputs)
 
         # `criterion()` 计算【损失函数】结果， (output, target) 作为输入 (output为网络的输出,target为实际值)
         loss = criterion(y_pred.squeeze(), labels)
