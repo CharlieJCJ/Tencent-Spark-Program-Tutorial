@@ -1,4 +1,10 @@
 # Module 6: 人工智能神经网络基础-3 训练神经网络，深度神经网络
+- [Module 6: 人工智能神经网络基础-3 训练神经网络，深度神经网络](#module-6-人工智能神经网络基础-3-训练神经网络深度神经网络)
+  - [1. 训练神经网络核心知识点](#1-训练神经网络核心知识点)
+    - [`train_test_split.py`](#train_test_splitpy)
+  - [2. 使用 `pytorch` 库搭建并训练你的第一个神经网络](#2-使用-pytorch-库搭建并训练你的第一个神经网络)
+    - [`pytorch_perceptron.py`](#pytorch_perceptronpy)
+  - [3. 使用 Tensorflow playground 可视化 比较浅层神经网络和深度神经网络](#3-使用-tensorflow-playground-可视化-比较浅层神经网络和深度神经网络)
 
 ## 1. 训练神经网络核心知识点
 ***推荐教学时长：15分钟***
