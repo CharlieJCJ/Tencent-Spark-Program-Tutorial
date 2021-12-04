@@ -1,16 +1,16 @@
-# Module 6: 
-
+# Module 6: 人工智能神经网络基础-3 训练神经网络，深度神经网络
 
 ## 1. 训练神经网络重要知识点
-* 超参数 (hyperparameter)
+* ***超参数*** (hyperparameter)
   * 区分于
 
-* 训练集、验证集、测试集 (Train, Validation, Test Sets)
+* ***训练集、验证集、测试集 (Train, Validation, Test Sets)***
 ![TVT](/Module6/img/TVT.png)
 ![TVT](/Module6/img/TVT_workflow.png)
-* Epoch (中文翻译：时期。一般机器学习工程师直接会用`epoch`而不是它的中文翻译)
+* ***Epoch*** (中文翻译：时期。一般机器学习工程师直接会用`epoch`而不是它的中文翻译)
+  * 一个Epoch就是将所有训练样本训练一次的过程
 ![model](/Module6/img/Model_perf.png)
-* 过拟合（over-fitting ）另外一种叫欠拟合（under-fitting）
+* ***过拟合（over-fitting ）欠拟合（under-fitting）***
 ![fit](/Module6/img/overfit_underfit.png)
 * 模型准确率 (Accuracy)
 
