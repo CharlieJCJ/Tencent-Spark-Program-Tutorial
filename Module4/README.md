@@ -1,5 +1,11 @@
 # Module 4 矩阵乘法，感知机 Perceptron (单层神经网络)，神经网络demo
 
+- [Module 4 矩阵乘法，感知机 Perceptron (单层神经网络)，神经网络demo](#module-4-矩阵乘法感知机-perceptron-单层神经网络神经网络demo)
+  - [1. 矩阵乘法 (Matrix multiplication)](#1-矩阵乘法-matrix-multiplication)
+  - [2. 感知机运算 (Perceptron calculation)](#2-感知机运算-perceptron-calculation)
+  - [3. 损失函数 (cost function)](#3-损失函数-cost-function)
+  - [4. 神经网络训练 demo](#4-神经网络训练-demo)
+
 使用到的库 (课前需要提前安装好)：
 ```python
 from matplotlib import pyplot as plt

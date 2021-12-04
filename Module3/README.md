@@ -4,6 +4,13 @@
 
 **课程目的**：为图片存储数据格式 3维矩阵 (width, height, channel) ，图片矩阵卷积计算，神经网络计算打基础
 
+- [Module 3 Intro to Numpy](#module-3-intro-to-numpy)
+  - [1. 理解在处理大数据问题上为什么推荐使用NumPy，而不是列表](#1-理解在处理大数据问题上为什么推荐使用numpy而不是列表)
+  - [2. NumPy 基础](#2-numpy-基础)
+  - [3. NumPy 数组运算，矩阵乘法](#3-numpy-数组运算矩阵乘法)
+  - [4. 常见错误 (当需要复制np array的时候的注意事项)](#4-常见错误-当需要复制np-array的时候的注意事项)
+  - [5. 【应用】cv2 import的图片是使用 numpy array 来表示的](#5-应用cv2-import的图片是使用-numpy-array-来表示的)
+
 ## 1. 理解在处理大数据问题上为什么推荐使用NumPy，而不是列表
 
 [`list_vs_numpy.md`](/Module3/numpy/list_vs_numpy.md)

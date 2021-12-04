@@ -1,5 +1,12 @@
 # Module 1 
 **Previous Knowledge of Learners**: python语言的一定的了解。
+- [Module 1](#module-1)
+  - [1. Introduction 视频介绍（星火导师）:](#1-introduction-视频介绍星火导师)
+  - [2. 了解Shell命令行基础命令（例如：ls, cd, pwd, python3 filename, mkdir）](#2-了解shell命令行基础命令例如ls-cd-pwd-python3-filename-mkdir)
+  - [3. python语句的练习](#3-python语句的练习)
+  - [Extra: 4. os库使用](#extra-4-os库使用)
+  - [现场同学出现的问题：](#现场同学出现的问题)
+
 ## 1. Introduction 视频介绍（星火导师）: 
 推荐时长：5分钟
 1. 介绍整个实践课的安排，三个阶段的内容；
