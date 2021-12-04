@@ -5,7 +5,7 @@
   - [2. 使用 `pytorch` 库搭建并训练你的第一个神经网络](#2-使用-pytorch-库搭建并训练你的第一个神经网络)
     - [`pytorch_perceptron.py`](#pytorch_perceptronpy)
   - [3. 使用 Tensorflow playground 可视化 比较浅层神经网络和深度神经网络](#3-使用-tensorflow-playground-可视化-比较浅层神经网络和深度神经网络)
-  - [***预告下周 Module7***：用代码搭建，训练深度神经网络（对于图片数据进行分类）。卷积神经网络introduction](#预告下周-module7用代码搭建训练深度神经网络对于图片数据进行分类卷积神经网络introduction)
+  - [***预告下周 Module7***：](#预告下周-module7)
 
 ## 1. 训练神经网络核心知识点
 ***推荐教学时长：15分钟***
@@ -79,4 +79,5 @@ https://playground.tensorflow.org/#activation=tanh&batchSize=10&dataset=circle&r
 2. 观察overfit, underfit (打开test data的distribution）
       - 过度fit原始数据集
 
-## ***预告下周 Module7***：用代码搭建，训练深度神经网络（对于图片数据进行分类）。卷积神经网络introduction
+## ***预告下周 Module7***：
+用代码搭建，训练深度神经网络（对于图片数据进行分类）。卷积神经网络introduction
