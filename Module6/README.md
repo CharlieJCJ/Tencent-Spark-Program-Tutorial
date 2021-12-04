@@ -23,6 +23,9 @@
   * 随着epoch数量增加，神经网络中的权重的更新次数也在增加，曲线从欠拟合变得过拟合。
 ![model](/Module6/img/Model_perf.png)
 
+* EXTRA ***Batch_size***
+  * 所谓Batch就是每次送入网络中训练的一部分数据，而Batch Size就是每个batch中训练样本的数量，这是另一个`超参数`
+  * 优点：通过并行化提高内存的利用率，提高训练速度。适当Batch Size使得梯度下降方向更加准确。
 * ***模型准确率*** (Accuracy)
 ![acc](/Module6/img/Accuracy.png)
   * Extra: 其他分类模型评估指标请同学自行阅读 https://easyai.tech/ai-definition/accuracy-precision-recall-f1-roc-auc/
@@ -62,8 +65,11 @@
 
 https://playground.tensorflow.org/#activation=tanh&batchSize=10&dataset=circle&regDataset=reg-plane&learningRate=0.03&regularizationRate=0&noise=0&networkShape=4,2&seed=0.41236&showTestData=false&discretize=false&percTrainData=50&x=true&y=true&xTimesY=false&xSquared=false&ySquared=false&cosX=false&sinX=false&cosY=false&sinY=false&collectStats=false&problem=classification&initZero=false&hideText=false
 
-![playground]()
+![playground](/Module6/img/compare.png)
 
-## 4. 搭建深度神经网络结构
+**引导学生回答下列问题：**
+1. 多层神经网络有什么作用？
+2. 观察overfit, underfit (打开test data的distribution）
+      - 过度fit原始数据集
 
-预告下周
+***预告下周 Module7***：用代码搭建，训练深度神经网络（对于图片数据进行分类）。卷积神经网络introduction
