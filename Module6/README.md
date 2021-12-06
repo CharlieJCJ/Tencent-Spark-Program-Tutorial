@@ -3,7 +3,7 @@
   - [1. 训练神经网络核心知识点](#1-训练神经网络核心知识点)
     - [* ***超参数*** (hyperparameter)](#-超参数-hyperparameter)
     - [* ***训练集、验证集、测试集 (Train, Validation, Test Sets)***](#-训练集验证集测试集-train-validation-test-sets)
-    - [`train_test_split.py`](#train_test_splitpy)
+      - [`train_test_split.py`](#train_test_splitpy)
     - [* ***过拟合（over-fitting ）欠拟合（under-fitting）***](#-过拟合over-fitting-欠拟合under-fitting)
     - [* ***Epoch*** (中文翻译：时期。一般机器学习工程师直接会用`epoch`而不是它的中文翻译)](#-epoch-中文翻译时期一般机器学习工程师直接会用epoch而不是它的中文翻译)
     - [* *EXTRA* ***Batch_size***](#-extra-batch_size)
@@ -22,7 +22,7 @@
 ### * ***训练集、验证集、测试集 (Train, Validation, Test Sets)***
 ![TVT](/Module6/img/TVT.png)
 ![TVT](/Module6/img/TVT_workflow.png)
-### [`train_test_split.py`](train_test_split.py)
+#### [`train_test_split.py`](train_test_split.py)
    * 训练集：用来训练模型内参数的数据集
    * 验证集：验证集通常用于调整超参数，根据几组模型验证集上的表现决定哪组超参数拥有最好的性能。
    * 测试集：评估模型的泛化能力（看模型有没有出现过拟合）
