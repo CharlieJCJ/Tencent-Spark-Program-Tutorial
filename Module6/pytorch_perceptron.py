@@ -11,7 +11,7 @@ import matplotlib.pyplot as plt
 # 0. 超参数
 LR = 0.01
 num_epoch = 10
-batch_size = 5   # 这个先不用讲解
+batch_size = 1   # 这个先不用讲解
 
 # Helper plot function (将训练后结果做可视化)
 def plot(data, prediction, mode = "Train"):
@@ -67,11 +67,12 @@ num_iteration = math.ceil(total_sample/batch_size)
 class Perceptron(torch.nn.Module):
     def __init__(self):
         super(Perceptron, self).__init__()
+        # `torch.nn.Linear`的作用是对输入向量进行矩阵的乘积和加法。
         self.fc = torch.nn.Linear(2,1)
-        self.sigmoid = torch.nn.Sigmoid() # instead of Heaviside step fn
+        self.sigmoid = torch.nn.Sigmoid()
     def forward(self, x):
         output = self.fc(x)
-        output = self.sigmoid(output) # instead of Heaviside step fn
+        output = self.sigmoid(output)
         return output
 
 class MLP(torch.nn.Module):
@@ -132,6 +133,7 @@ model.eval()
 y_pred = model(test_set[0])
 after_train = criterion(y_pred.squeeze(), test_set[1])
 print('Test loss after Training', after_train.item())
+print('Accuracy on testset: ', float(sum(((y_pred >= 0.5) * 1).squeeze() == test_set[1].squeeze()) / len(test_set[1])))
 
 #  ****************************************************************  #
 # (optional) print 模型训练后的模型参数 - weights, bias
