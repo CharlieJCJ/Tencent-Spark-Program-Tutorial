@@ -9,7 +9,7 @@ import math
 import matplotlib.pyplot as plt
 
 # 0. 超参数
-LR = 0.01
+LR = 0.1
 num_epoch = 10
 batch_size = 1   # 这个先不用讲解
 
@@ -50,9 +50,9 @@ dataset = PointsDataset()
 
 '''
 first_row = dataset[0] # first row
-features, labels = firstdata
+features, labels = first_row
 print(features, labels)
-print(len(firstdata))
+print(len(dataset))
 '''
 
 #  ****************************************************************  #

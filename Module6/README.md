@@ -10,11 +10,12 @@
     - [* ***模型准确率*** (Accuracy)](#-模型准确率-accuracy)
   - [2. 使用 `pytorch` 库搭建并训练你的第一个神经网络](#2-使用-pytorch-库搭建并训练你的第一个神经网络)
     - [`pytorch_perceptron.py`](#pytorch_perceptronpy)
+    - [`dataset.py`](#datasetpy)
   - [3. 使用 Tensorflow playground 可视化 比较浅层神经网络和深度神经网络](#3-使用-tensorflow-playground-可视化-比较浅层神经网络和深度神经网络)
   - [***预告下周 Module7***：](#预告下周-module7)
 
 ## 1. 训练神经网络核心知识点
-***推荐教学时长：15分钟***
+***推荐教学时长：12分钟***
 ### * ***超参数*** (hyperparameter)
   * 区分于`可训练参数`，超参数是在开始学习过程之前设置值的参数，而不是通过训练得到的参数数据。通常情况下，需要对超参数进行优化，给学习机选择一组最优超参数，以提高学习的性能和效果。
   * 比如：模型的学习率 learning rate，深层神经网络隐藏层数 hidden layers（在本章后面会介绍）
@@ -47,7 +48,9 @@
 ## 2. 使用 `pytorch` 库搭建并训练你的第一个神经网络
 
 ### [`pytorch_perceptron.py`](pytorch_perceptron.py)
-***推荐教学时长：15分钟***
+### [`dataset.py`](/Module6/dataset.py)
+
+***推荐教学时长：18分钟***
 1. 训练，测试数据
    1. 使用 torch.utils.data 模块的 Dataset
 2. 将整个数据集分成训练集和测试集
