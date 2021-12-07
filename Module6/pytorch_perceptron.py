@@ -101,7 +101,7 @@ class MLP(torch.nn.Module):
 # epoch 是指所有数据被训练的总轮数
 
 model = Perceptron()
-# model = MLP(2, 20) # 下节课 Module 6 的内容
+# model = MLP(2, 20) # 下节课 Module 7 的内容
 criterion = torch.nn.MSELoss()
 optimizer = torch.optim.SGD(model.parameters(), lr = LR)
 
