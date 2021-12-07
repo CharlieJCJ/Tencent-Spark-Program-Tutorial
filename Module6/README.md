@@ -88,3 +88,5 @@ https://playground.tensorflow.org/#activation=tanh&batchSize=10&dataset=circle&r
 
 ## ***预告下周 Module7***：
 用代码搭建，训练深度神经网络（对于图片数据进行分类）。卷积神经网络introduction
+
+Extra：对于python如何写面向对象编程，这里是一个参考网站：https://www.runoob.com/python/python-object.html
