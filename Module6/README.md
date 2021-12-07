@@ -74,7 +74,7 @@
 深度神经网络是一种具备至少一个隐层的神经网络。
 ![SNN](/Module6/img/SNN.jpg)
 ![DNN](/Module6/img/neural-net.png)
-**图一是perceptron（浅层神经网络）；图二是深度神经网络（有两个隐层）**
+**图一是perceptron（浅层神经网络）；图二是深度神经网络（有>=1个隐层）**
 
 https://playground.tensorflow.org/#activation=tanh&batchSize=10&dataset=circle&regDataset=reg-plane&learningRate=0.03&regularizationRate=0&noise=0&networkShape=4,2&seed=0.41236&showTestData=false&discretize=false&percTrainData=50&x=true&y=true&xTimesY=false&xSquared=false&ySquared=false&cosX=false&sinX=false&cosY=false&sinY=false&collectStats=false&problem=classification&initZero=false&hideText=false
 
