@@ -68,7 +68,11 @@ class Perceptron(torch.nn.Module):
     def __init__(self):
         super(Perceptron, self).__init__()
         # `torch.nn.Linear`的作用是对输入向量进行矩阵的乘积和加法。
-        self.fc = torch.nn.Linear(2,1)
+        # `torch.nn.Linear(in_features, out_features)`
+            # in_features - size of each input sample
+            # out_features – size of each output sample
+        self.fc = torch.nn.Linear(2, 1)
+        # Sigmoid 激活层
         self.sigmoid = torch.nn.Sigmoid()
     def forward(self, x):
         output = self.fc(x)
