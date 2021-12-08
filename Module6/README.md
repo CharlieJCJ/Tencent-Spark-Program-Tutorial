@@ -50,7 +50,7 @@
 ### [`pytorch_perceptron.py`](pytorch_perceptron.py)
 ### [`dataset.py`](/Module6/dataset.py)
 
-***推荐教学时长：18分钟***
+***推荐教学时长：15分钟***
 1. 训练，测试数据
    1. 使用 torch.utils.data 模块的 Dataset
 2. 将整个数据集分成训练集和测试集
@@ -72,7 +72,7 @@
 ![pytorch](/Module5/img/pytorch1.png)
 
 ## 3. 使用 Tensorflow playground 可视化 比较浅层神经网络和深度神经网络
-***推荐教学时长：7分钟***
+***推荐教学时长：10分钟***
 * 什么是深度神经网络？
 深度神经网络是一种具备至少一个隐层的神经网络。
 ![SNN](/Module6/img/SNN.jpg)
