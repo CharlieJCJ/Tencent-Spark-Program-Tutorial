@@ -6,7 +6,7 @@
       - [`train_test_split.py`](#train_test_splitpy)
     - [* ***过拟合（over-fitting ）欠拟合（under-fitting）***](#-过拟合over-fitting-欠拟合under-fitting)
     - [* ***Epoch*** (中文翻译：时期。一般机器学习工程师直接会用`epoch`而不是它的中文翻译)](#-epoch-中文翻译时期一般机器学习工程师直接会用epoch而不是它的中文翻译)
-    - [* *EXTRA* ***Batch_size***](#-extra-batch_size)
+    - [* *EXTRA* ***Batch_size*** (这个课上不用讲解)](#-extra-batch_size-这个课上不用讲解)
     - [* ***模型准确率*** (Accuracy)](#-模型准确率-accuracy)
   - [2. 使用 `pytorch` 库搭建并训练你的第一个神经网络](#2-使用-pytorch-库搭建并训练你的第一个神经网络)
     - [`pytorch_perceptron.py`](#pytorch_perceptronpy)
@@ -37,7 +37,7 @@
   * 随着epoch数量增加，神经网络中的权重的更新次数也在增加，曲线从欠拟合变得过拟合。
 ![model](/Module6/img/Model_perf.png)
 
-### * *EXTRA* ***Batch_size***
+### * *EXTRA* ***Batch_size*** (这个课上不用讲解)
   * 所谓Batch就是每次送入网络中训练的一部分数据，而Batch Size就是每个batch中训练样本的数量，这是另一个`超参数`
   * 优点：通过并行化提高内存的利用率，提高训练速度。适当Batch Size使得梯度下降方向更加准确。
 ### * ***模型准确率*** (Accuracy)
