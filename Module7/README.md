@@ -42,7 +42,9 @@ import torch.nn.functional as F
 <details>
   <summary>一张图片在计算机里的存储结构</summary>
   >>> images[0].shape
+  
 (1, 28, 28)
+  
 >>> images[0]
 array([[[0.        , 0.        , 0.        , 0.        , 0.        ,
          0.        , 0.        , 0.        , 0.        , 0.        ,
