@@ -22,21 +22,21 @@ import torch.nn.functional as F
 
 
 
-## 1. 在MNIST数据集上 - 训练多层深度神经网络
+## 1. 在`MNIST数据集`上 - 训练多层深度神经网络
 
 *建议教学时长：20分钟*
 
 ### [`dataset_visuals.py`](/Module7/dataset_visual.py)
-- 简单介绍MNIST手写数字数据集的背景（在做任何数据分析前需要对于数据集的背景做一定的了解，有助于我们对于模型最终的结果有效性做出合理解释）
+- 简单介绍`MNIST手写数字数据集`的背景（在做任何数据分析前需要对于数据集的背景做一定的了解，有助于我们对于模型最终的结果有效性做出合理解释）
 - 理解电脑中是如何存储图片数据 （用`dataset_visuals.py`来讲解）
 ![dataset_visual1](/Module7/img/dataset_visual_1.png)
 ![dataset_visual2](/Module7/img/dataset_visual_2.png)
 
 ### [`mlp.py`](/Module7/mlp.py)
 
-- 比较浅层Perceptron和多层深度神经网络在MNIST手写数据集上的正确率表现（在我的本地电脑上：Perception overall accuracy 92%， MLP overall accuracy 97 ~ 98%）
+- 比较浅层Perceptron和多层深度神经网络在`MNIST手写数据集`上的正确率表现（在我的本地电脑上：Perception overall accuracy 92%， MLP overall accuracy 97 ~ 98%）
   - Perceptron基本上在2分钟内可以跑完，MLP大概在5～6分钟左右
-![train_res](/Module7/img/perceptron_test.jpeg)
+  ![train_res](/Module7/img/perceptron_test.jpeg)
 ```
 Perceptron(
   (fc1): Linear(in_features=784, out_features=10, bias=True)
@@ -150,7 +150,7 @@ Test Accuracy (Overall): 97% (9785/10000)
 
 ### 池化层 (pooling layer)
 - 用于压缩数据和参数的量
-![max_pool](img/max_pool.gif)
+  ![max_pool](img/max_pool.gif)
     #### Pooling Layer Demo:
     https://deeplizard.com/resource/pavq7noze3
     ![pool](img/maxpool.png)
