@@ -5,8 +5,8 @@
     - [`dataset_visuals.py`](#dataset_visualspy)
     - [`mlp.py`](#mlppy)
   - [2. 卷积神经网络引入](#2-卷积神经网络引入)
-    - [图像卷积 (image convolution)](#图像卷积-image-convolution)
-    - [池化层 (pooling layer)](#池化层-pooling-layer)
+    - [1. 图像卷积 (image convolution)](#1-图像卷积-image-convolution)
+    - [2. 池化层 (pooling layer)](#2-池化层-pooling-layer)
 
 *教学前需要装的python library*
 
@@ -323,7 +323,7 @@ Test Accuracy (Overall): 97% (9785/10000)
     ![img](/Module7/img/what_comp_sees.png)
   - 卷积网络可以简单理解为将像素点的邻近像素点的信息也考虑进去，不是像素级的比较，而是部分图片和部分图片的比较
 
-### 图像卷积 (image convolution)
+### 1. 图像卷积 (image convolution)
 - 从box blurring开始讲，在黑板上做一个演示
 - 图像卷积就是卷积核在图像上按行滑动遍历像素时不断的相乘求和的过程
     ![conv](/Module7/img/convolution.gif)
@@ -334,7 +334,7 @@ Test Accuracy (Overall): 97% (9785/10000)
     https://generic-github-user.github.io/Image-Convolution-Playground/src/
     ![conv_demo](img/conv_demo.png)
 
-### 池化层 (pooling layer)
+### 2. 池化层 (pooling layer)
 - 用于压缩数据和参数的量
   ![max_pool](img/max_pool.gif)
     #### Pooling Layer Demo:
