@@ -1,10 +1,15 @@
 # Module 7: 人工智能神经网络基础-4 深度神经网络，卷积神经网络引入
 
 - [Module 7: 人工智能神经网络基础-4 深度神经网络，卷积神经网络引入](#module-7-人工智能神经网络基础-4-深度神经网络卷积神经网络引入)
-  - [1. 训练多层深度神经网络](#1-训练多层深度神经网络)
-    - [`dataset_visuals`](#dataset_visuals)
+  - [1. 在MNIST数据集上 - 训练多层深度神经网络](#1-在mnist数据集上---训练多层深度神经网络)
+    - [`dataset_visuals.py`](#dataset_visualspy)
     - [`mlp.py`](#mlppy)
   - [2. 卷积神经网络引入](#2-卷积神经网络引入)
+    - [图像卷积 (image convolution)](#图像卷积-image-convolution)
+      - [Image Convolution Demo: https://deeplizard.com/resource/pavq7noze2](#image-convolution-demo-httpsdeeplizardcomresourcepavq7noze2)
+      - [图像卷积效果Demo (网页里有不同kernel，可以让同学用不同的卷积核看看效果): https://generic-github-user.github.io/Image-Convolution-Playground/src/](#图像卷积效果demo-网页里有不同kernel可以让同学用不同的卷积核看看效果-httpsgeneric-github-usergithubioimage-convolution-playgroundsrc)
+    - [池化层 (pooling layer)](#池化层-pooling-layer)
+      - [Pooling Layer Demo: https://deeplizard.com/resource/pavq7noze3](#pooling-layer-demo-httpsdeeplizardcomresourcepavq7noze3)
 
 *教学前需要装的python library*
 
@@ -20,19 +25,21 @@ import torch.nn.functional as F
 
 
 
-## 1. 训练多层深度神经网络
+## 1. 在MNIST数据集上 - 训练多层深度神经网络
 
 *建议教学时长：*20分钟
 
-### [`dataset_visuals`](/Module7/dataset_visual.py)
+### [`dataset_visuals.py`](/Module7/dataset_visual.py)
 - 简单介绍MNIST手写数字数据集的背景（在做任何数据分析前需要对于数据集的背景做一定的了解，有助于我们对于模型最终的结果有效性做出合理解释）
 - 理解电脑中是如何存储图片数据 （用`dataset_visuals.py`来讲解）
+![dataset_visual1](/Module7/img/dataset_visual_1.png)
+![dataset_visual2](/Module7/img/dataset_visual_2.png)
 
 ### [`mlp.py`](/Module7/mlp.py)
 
 - 比较浅层Perceptron和多层深度神经网络在MNIST手写数据集上的正确率表现（在我的本地电脑上：Perception overall accuracy 92%， MLP overall accuracy 97 ~ 98%）
   - Perceptron基本上在2分钟内可以跑完，MLP大概在5～6分钟左右
-
+![train_res](/Module7/img/perceptron_test.jpeg)
 ```
 Perceptron(
   (fc1): Linear(in_features=784, out_features=10, bias=True)
@@ -74,7 +81,7 @@ Test Accuracy (Overall): 92% (9221/10000)
 ```
 
 
-
+![mlp](/Module7/img/mlp_test.png)
 ```
 MLP(
   (fc1): Linear(in_features=784, out_features=512, bias=True)
@@ -124,6 +131,19 @@ Test Accuracy (Overall): 97% (9785/10000)
 ## 2. 卷积神经网络引入
 
 - 理解为什么需要卷积网络
+  - 之前的全连接(fully-connected layer)将图片转换为很长很长的向量，（比如28 * 28像素的图片转换成长度为784的向量）
+    ![flatten](/Module7/img/flattened.png)
+  - 对于人来说这两张非常相似，但如果问电脑以下两张图片有什么不同，答案是截然不同的，因为每个像素点的坐标都是不一样的。
+    ![img](/Module7/img/what_comp_sees.png)
+  - 卷积网络
 
-Demo: https://generic-github-user.github.io/Image-Convolution-Playground/src/
+### 图像卷积 (image convolution)
+- 从box blurring开始讲
+- 图像卷积就是卷积核在图像上按行滑动遍历像素时不断的相乘求和的过程
+#### Image Convolution Demo: https://deeplizard.com/resource/pavq7noze2
+#### 图像卷积效果Demo (网页里有不同kernel，可以让同学用不同的卷积核看看效果): https://generic-github-user.github.io/Image-Convolution-Playground/src/
 
+
+### 池化层 (pooling layer)
+- 用于压缩数据和参数的量
+#### Pooling Layer Demo: https://deeplizard.com/resource/pavq7noze3
