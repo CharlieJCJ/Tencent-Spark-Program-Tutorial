@@ -62,7 +62,7 @@ class MLP(nn.Module):
         return x
 
 # initialize the NN
-model = Perceptron()
+model = MLP()
 print(model)
 
 
