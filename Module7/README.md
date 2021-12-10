@@ -6,10 +6,7 @@
     - [`mlp.py`](#mlppy)
   - [2. 卷积神经网络引入](#2-卷积神经网络引入)
     - [图像卷积 (image convolution)](#图像卷积-image-convolution)
-      - [Image Convolution Demo: https://deeplizard.com/resource/pavq7noze2](#image-convolution-demo-httpsdeeplizardcomresourcepavq7noze2)
-      - [图像卷积效果Demo (网页里有不同kernel，可以让同学用不同的卷积核看看效果): https://generic-github-user.github.io/Image-Convolution-Playground/src/](#图像卷积效果demo-网页里有不同kernel可以让同学用不同的卷积核看看效果-httpsgeneric-github-usergithubioimage-convolution-playgroundsrc)
     - [池化层 (pooling layer)](#池化层-pooling-layer)
-      - [Pooling Layer Demo: https://deeplizard.com/resource/pavq7noze3](#pooling-layer-demo-httpsdeeplizardcomresourcepavq7noze3)
 
 *教学前需要装的python library*
 
@@ -135,15 +132,22 @@ Test Accuracy (Overall): 97% (9785/10000)
     ![flatten](/Module7/img/flattened.png)
   - 对于人来说这两张非常相似，但如果问电脑以下两张图片有什么不同，答案是截然不同的，因为每个像素点的坐标都是不一样的。
     ![img](/Module7/img/what_comp_sees.png)
-  - 卷积网络
+  - 卷积网络可以简单理解为将像素点的邻近像素点的信息也考虑进去，不是像素级的比较，而是部分图片和部分图片的比较
 
 ### 图像卷积 (image convolution)
-- 从box blurring开始讲
+- 从box blurring开始讲，在黑板上做一个演示
 - 图像卷积就是卷积核在图像上按行滑动遍历像素时不断的相乘求和的过程
-#### Image Convolution Demo: https://deeplizard.com/resource/pavq7noze2
-#### 图像卷积效果Demo (网页里有不同kernel，可以让同学用不同的卷积核看看效果): https://generic-github-user.github.io/Image-Convolution-Playground/src/
-
+    ![conv](/Module7/img/convolution.gif)
+    #### Image Convolution Calculation Demo:
+    https://deeplizard.com/resource/pavq7noze2
+    ![conv_calc](img/conv_calc.png)
+    #### 图像卷积效果Demo (网页里有不同kernel，比如图片模糊，图片锐化等可以让同学用不同的卷积核看看应用在图片上的效果):
+    https://generic-github-user.github.io/Image-Convolution-Playground/src/
+    ![conv_demo](img/conv_demo.png)
 
 ### 池化层 (pooling layer)
 - 用于压缩数据和参数的量
-#### Pooling Layer Demo: https://deeplizard.com/resource/pavq7noze3
+![max_pool](img/max_pool.gif)
+    #### Pooling Layer Demo:
+    https://deeplizard.com/resource/pavq7noze3
+    ![pool](img/maxpool.png)
