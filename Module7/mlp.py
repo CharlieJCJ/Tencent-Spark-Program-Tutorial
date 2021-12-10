@@ -65,8 +65,6 @@ class MLP(nn.Module):
 model = MLP()
 print(model)
 
-
-
 ## Specify loss and optimization functions
 
 # specify loss function
@@ -74,8 +72,6 @@ criterion = nn.CrossEntropyLoss()
 
 # specify optimizer
 optimizer = torch.optim.SGD(model.parameters(), lr=0.01)
-
-
 
 
 model.train() # prep model for training
