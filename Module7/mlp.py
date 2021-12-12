@@ -88,6 +88,7 @@ for epoch in range(n_epochs):
         optimizer.zero_grad()
         # forward pass: compute predicted outputs by passing inputs to the model
         output = model(data)
+        print("output", output, "\n\ntarget", target, "\n\n")
         # calculate the loss
         loss = criterion(output, target)
         # backward pass: compute gradient of the loss with respect to model parameters
