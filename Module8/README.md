@@ -29,6 +29,7 @@ Q: 观察一下LeNet-5网络的特征，规律?
 
 *建议教学时长：25分钟*
 
+### [train_CNN_network.py](train_CNN_network.py)
 ```python
 Epoch: 1        Training Loss: 2.299405
 Epoch: 2        Training Loss: 1.538855
