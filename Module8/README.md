@@ -7,7 +7,6 @@
       - [建议使用下方可视化讲解：https://ezyang.github.io/convolution-visualizer/](#建议使用下方可视化讲解httpsezyanggithubioconvolution-visualizer)
     - [b. 介绍一下简单的卷积网络结构 (从LeNet-5开始举例，最基础的卷积神经网络结构)](#b-介绍一下简单的卷积网络结构-从lenet-5开始举例最基础的卷积神经网络结构)
     - [***EXTRA***: output_size formula:](#extra-output_size-formula)
-    - [***EXTRA***: 在RGB图片上的卷积层](#extra-在rgb图片上的卷积层)
   - [2. 训练卷积神经网络](#2-训练卷积神经网络)
     - [`LeNet_model.py`](#lenet_modelpy)
     - [`train_CNN_network.py`](#train_cnn_networkpy)
@@ -16,7 +15,7 @@
 
 ## 0. 课前Demo
 学习知识前先放一个最终手势识别的网页版Demo，向同学展示这门课的最终成果是如何的：https://www.cs.ryerson.ca/~aharley/vis/conv/
-![CNN handwritten digit demo](/Module8/img/CNN%20interactive.png)
+![CNN handwritten digit demo](/Module8/img/CNN%20demo.png)
 
 ## 1. 卷积神经网络核心
 *建议教学时长：25分钟*
@@ -27,7 +26,7 @@
 3. Kernel size (常用 3x3, 5x5等)
 
 #### 建议使用下方可视化讲解：https://ezyang.github.io/convolution-visualizer/
-
+![kernel demo](/Module8/img/CNN%20interactive.png)
 ### b. 介绍一下简单的卷积网络结构 (从LeNet-5开始举例，最基础的卷积神经网络结构)
 ![LeNet-5](/Module8/img/Lenet-5%20architecture.jpeg)
 Q: 观察一下LeNet-5网络的特征，规律?
@@ -36,8 +35,7 @@ Q: 观察一下LeNet-5网络的特征，规律?
 ![output_size_formula](/Module8/img/n_out%20formula.png)
 - 比如拿最简单的例子，一个6x6的图片(n_in = 6)，卷积核大小3x3 (kernel size = 3)，padding = 0, stride = 1
   - (6 + 2 * 0 - 3)/1 + 1 = 4 --> n_out (output size)
-### ***EXTRA***: 在RGB图片上的卷积层
-- 
+
 一篇关于卷积层中`卷积核大小`，`padding`，`stride`对于output feature image 形状的关系和影响: https://machinelearningmastery.com/padding-and-stride-for-convolutional-neural-networks/
 
 ## 2. 训练卷积神经网络
