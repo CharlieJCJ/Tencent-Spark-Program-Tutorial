@@ -5,8 +5,10 @@
   - [1. 卷积神经网络核心](#1-卷积神经网络核心)
     - [a. 继续Module7对于卷积的讨论，定义一些卷积层的超参数`hyperparameters`：](#a-继续module7对于卷积的讨论定义一些卷积层的超参数hyperparameters)
       - [建议使用下方可视化讲解：https://ezyang.github.io/convolution-visualizer/](#建议使用下方可视化讲解httpsezyanggithubioconvolution-visualizer)
+      - [浅谈为什么需要Padding, Stride, Kernel size 这些超参数](#浅谈为什么需要padding-stride-kernel-size-这些超参数)
     - [b. 介绍一下简单的卷积网络结构 (从LeNet-5开始举例，最基础的卷积神经网络结构)](#b-介绍一下简单的卷积网络结构-从lenet-5开始举例最基础的卷积神经网络结构)
     - [***EXTRA***: output_size formula:](#extra-output_size-formula)
+      - [浅谈卷积网络每一层](#浅谈卷积网络每一层)
   - [2. 训练卷积神经网络](#2-训练卷积神经网络)
     - [`LeNet_model.py`](#lenet_modelpy)
     - [`train_CNN_network.py`](#train_cnn_networkpy)
@@ -27,6 +29,9 @@
 
 #### 建议使用下方可视化讲解：https://ezyang.github.io/convolution-visualizer/
 ![kernel demo](/Module8/img/CNN%20interactive.png)
+
+#### 浅谈为什么需要Padding, Stride, Kernel size 这些超参数
+
 ### b. 介绍一下简单的卷积网络结构 (从LeNet-5开始举例，最基础的卷积神经网络结构)
 ![LeNet-5](/Module8/img/Lenet-5%20architecture.jpeg)
 Q: 观察一下LeNet-5网络的特征，规律?
@@ -36,7 +41,8 @@ Q: 观察一下LeNet-5网络的特征，规律?
 - 比如拿最简单的例子，一个6x6的图片(n_in = 6)，卷积核大小3x3 (kernel size = 3)，padding = 0, stride = 1
   - (6 + 2 * 0 - 3)/1 + 1 = 4 --> n_out (output size)
 
-一篇关于卷积层中`卷积核大小`，`padding`，`stride`对于output feature image 形状的关系和影响: https://machinelearningmastery.com/padding-and-stride-for-convolutional-neural-networks/
+#### 浅谈卷积网络每一层
+Optional: 一篇关于卷积层中`卷积核大小`，`padding`，`stride`对于output feature image 形状的关系和影响: https://machinelearningmastery.com/padding-and-stride-for-convolutional-neural-networks/
 
 ## 2. 训练卷积神经网络
 > Bringing it all together
@@ -45,6 +51,7 @@ Q: 观察一下LeNet-5网络的特征，规律?
 
 ### [`LeNet_model.py`](LeNet_model_structure.py)
 ### [`train_CNN_network.py`](train_CNN_network.py)
+***NOTE***: 这是跑完100个epoch的结果，上课的时候只需要跑20个epoch即可（正确率能到98%），20个epoch大概要跑10分钟左右，可以先让同学把代码跑起来，然后开始讲网络结构如何用pytorch写。讲完了基本上网络也训练完了，正好同学可以看一些训练结果。
 ![CNN result](/Module8/img/CNN%20result.png)
 ```python
 Epoch: 1        Training Loss: 2.299405
@@ -70,6 +77,7 @@ Test Accuracy of     9: 97% (987/1009)
 
 Test Accuracy (Overall): 99% (9901/10000)
 ```
+
 
 完整model training（用了100 epoch）的训练过程log记录在下面的文件中：
 ### [`LeNet_log.txt`](/Module8/LeNet_log.txt)
