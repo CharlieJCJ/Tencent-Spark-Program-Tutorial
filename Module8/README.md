@@ -29,5 +29,29 @@ Q: 观察一下LeNet-5网络的特征，规律?
 
 *建议教学时长：25分钟*
 
+```python
+Epoch: 1        Training Loss: 2.299405
+Epoch: 2        Training Loss: 1.538855
+Epoch: 3        Training Loss: 0.403314
+Epoch: 4        Training Loss: 0.329937
+Epoch: 5        Training Loss: 0.306231
+...
+Epoch: 99       Training Loss: 0.000238
+Epoch: 100      Training Loss: 0.000238
+Test Loss: 0.059046
+
+Test Accuracy of     0: 99% (977/980)
+Test Accuracy of     1: 99% (1127/1135)
+Test Accuracy of     2: 99% (1024/1032)
+Test Accuracy of     3: 99% (1006/1010)
+Test Accuracy of     4: 99% (974/982)
+Test Accuracy of     5: 98% (883/892)
+Test Accuracy of     6: 98% (946/958)
+Test Accuracy of     7: 98% (1015/1028)
+Test Accuracy of     8: 98% (962/974)
+Test Accuracy of     9: 97% (987/1009)
+
+Test Accuracy (Overall): 99% (9901/10000)
+```
 **预告下节课内容**：图像增广`image augmentation`，transfer learning
 
