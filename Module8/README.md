@@ -29,5 +29,5 @@ Q: 观察一下LeNet-5网络的特征，规律?
 
 *建议教学时长：25分钟*
 
-**预告下节课内容**：
+**预告下节课内容**：图像增广`image augmentation`，transfer learning
 
