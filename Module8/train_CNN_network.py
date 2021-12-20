@@ -11,7 +11,7 @@ import torch.nn.functional as F
 batch_size = 20
 
 # number of epochs to train the model
-n_epochs = 100  # suggest training between 20-50 epochs
+n_epochs = 20  # suggest training between 20-50 epochs
 
 # convert data to torch.FloatTensor
 transform = transforms.ToTensor()
@@ -28,6 +28,7 @@ test_loader = torch.utils.data.DataLoader(test_data, batch_size=batch_size)
 
 
 
+## Define the NN architecture
 class Perceptron(nn.Module):
     def __init__(self):
         super(Perceptron, self).__init__()
@@ -39,8 +40,6 @@ class Perceptron(nn.Module):
         x = self.fc1(x)
         x = F.relu(x)
         return x
-
-## Define the NN architecture
 class MLP(nn.Module):
     def __init__(self):
         super(MLP, self).__init__()
@@ -95,8 +94,6 @@ class LeNet(nn.Module):
 class LeNet(nn.Module):
     def __init__(self):
         super(LeNet, self).__init__()
-        self.relu = nn.ReLU()
-        self.pool = nn.MaxPool2d(2)
         self.conv1 = nn.Conv2d(1, 6, 5)
         self.conv2 = nn.Conv2d(6, 16, 5)
         self.fc1 = nn.Linear(256, 120)
@@ -104,14 +101,14 @@ class LeNet(nn.Module):
         self.fc3 = nn.Linear(84, 10)
 
     def forward(self, x):
-        y = self.relu(self.conv1(x))
-        y = self.pool(y)
-        y = self.relu(self.conv2(y))
-        y = self.pool(y)
+        y = F.relu(self.conv1(x))
+        y = F.max_pool2d(y, 2)
+        y = F.relu(self.conv2(y))
+        y = F.max_pool2d(y, 2)
         y = y.view(y.shape[0], -1)
-        y = self.relu(self.fc1(y))
-        y = self.relu(self.fc2(y))
-        y = self.relu(self.fc3(y))
+        y = F.relu(self.fc1(y))
+        y = F.relu(self.fc2(y))
+        y = F.relu(self.fc3(y))
         return y
 
 # initialize the NN

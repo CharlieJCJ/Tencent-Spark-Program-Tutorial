@@ -29,6 +29,7 @@ Q: 观察一下LeNet-5网络的特征，规律?
 
 *建议教学时长：25分钟*
 
+### [LeNet_model.py](LeNet_model_structure.py)
 ### [train_CNN_network.py](train_CNN_network.py)
 ```python
 Epoch: 1        Training Loss: 2.299405
@@ -54,5 +55,10 @@ Test Accuracy of     9: 97% (987/1009)
 
 Test Accuracy (Overall): 99% (9901/10000)
 ```
+
+完整model training（用了100 epoch）的训练过程log记录在下面的文件中：
+### [LeNet_log.txt](/Module8/LeNet_log.txt)
+
+
 **预告下节课内容**：图像增广`image augmentation`，transfer learning
 
