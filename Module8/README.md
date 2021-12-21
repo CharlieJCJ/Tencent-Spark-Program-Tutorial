@@ -5,8 +5,8 @@
   - [1. 卷积神经网络核心](#1-卷积神经网络核心)
     - [a. 继续Module7对于卷积的讨论，定义一些卷积层的超参数`hyperparameters`：](#a-继续module7对于卷积的讨论定义一些卷积层的超参数hyperparameters)
       - [建议使用下方可视化讲解：https://ezyang.github.io/convolution-visualizer/](#建议使用下方可视化讲解httpsezyanggithubioconvolution-visualizer)
-      - [浅谈为什么需要Padding, Stride, Kernel size 这些超参数](#浅谈为什么需要padding-stride-kernel-size-这些超参数)
-    - [b. 介绍一下简单的卷积网络结构 (从LeNet-5开始举例，最基础的卷积神经网络结构)](#b-介绍一下简单的卷积网络结构-从lenet-5开始举例最基础的卷积神经网络结构)
+    - [b. 对于3d物体的卷积 (3d 卷积核 长度，宽度，深度 height x width x channel)](#b-对于3d物体的卷积-3d-卷积核-长度宽度深度-height-x-width-x-channel)
+    - [c. 介绍一下简单的卷积网络结构 (从LeNet-5开始举例，最基础的卷积神经网络结构)](#c-介绍一下简单的卷积网络结构-从lenet-5开始举例最基础的卷积神经网络结构)
     - [***EXTRA***: output_size formula:](#extra-output_size-formula)
       - [浅谈卷积网络每一层的作用](#浅谈卷积网络每一层的作用)
   - [2. 训练卷积神经网络](#2-训练卷积神经网络)
@@ -23,18 +23,24 @@
 *建议教学时长：25分钟*
 
 ### a. 继续Module7对于卷积的讨论，定义一些卷积层的超参数`hyperparameters`：
-1. Padding
-2. Stride
-3. Kernel size (常用 3x3, 5x5等)
+1. Padding （让卷积核“*出界*”）
+    * 一般情况下，卷积核的移动范围没有超出图片边缘，因此图片的边缘部分只进行了一次乘加运算，卷积的叠加并不充分。为了让每个像素都进行足够充分的卷积运算，引入一种常见技巧–padding。
+    * padding 的操作就是在图片周围进行补0操作，同时让卷积核越出边界。由于补的数字都是0，所以并不会影响原图核卷积后的数据。对padding后的图片再进行卷积，就可以使每个卷积的叠加足够充分。
+    * 为了不丢弃原图信息，让更深层的layer的input依旧保持有足够大的信息量
+2. Stride （让卷积核“*跳跃*”）
+   * 是成倍缩小尺寸，而这个参数的值就是缩小的具体倍数，比如步幅为2，输出就是输入的1/2；步幅为3，输出就是输入的1/3
+3. Kernel size 卷积核大小 (常用 3x3, 5x5等)
 
 #### 建议使用下方可视化讲解：https://ezyang.github.io/convolution-visualizer/
 ![kernel demo](/Module8/img/CNN%20interactive.png)
 
-#### 浅谈为什么需要Padding, Stride, Kernel size 这些超参数
+### b. 对于3d物体的卷积 (3d 卷积核 长度，宽度，深度 height x width x channel)
+![conv_volume](/Module8/img/convolution_with_volume.gif)
 
-### b. 介绍一下简单的卷积网络结构 (从LeNet-5开始举例，最基础的卷积神经网络结构)
+### c. 介绍一下简单的卷积网络结构 (从LeNet-5开始举例，最基础的卷积神经网络结构)
 ![LeNet-5](/Module8/img/Lenet-5%20architecture.jpeg)
 Q: 观察一下LeNet-5网络的特征，规律?
+- 特征图片大小逐渐变小，深度 (channel) 变深
 
 ### ***EXTRA***: output_size formula:
 ![output_size_formula](/Module8/img/n_out%20formula.png)
@@ -42,6 +48,7 @@ Q: 观察一下LeNet-5网络的特征，规律?
   - (6 + 2 * 0 - 3)/1 + 1 = 4 --> n_out (output size)
 
 #### 浅谈卷积网络每一层的作用
+
 
 Optional: 一篇关于卷积层中`卷积核大小`，`padding`，`stride`对于output feature image 形状的关系和影响: https://machinelearningmastery.com/padding-and-stride-for-convolutional-neural-networks/
 
