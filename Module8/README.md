@@ -92,5 +92,7 @@ Test Accuracy (Overall): 99% (9901/10000)
 
 
 ## **预告下节课内容**：
+最后留一个伏笔，引入下节课的内容：
+![problem](/Module8/img/problem.png)
 图像增广 `image augmentation`，卷积网络在其他数据集上的应用，迁移学习
 
