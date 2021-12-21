@@ -58,6 +58,21 @@ Optional: 一篇关于卷积层中`卷积核大小`，`padding`，`stride`对于
 *建议教学时长：15分钟*
 
 ### [`LeNet_model.py`](LeNet_model_structure.py)
+
+```python
+  (conv1): Conv2d(1, 6, kernel_size=(5, 5), stride=(1, 1))
+  (relu1): ReLU()
+  (pool1): MaxPool2d(kernel_size=2, stride=2, padding=0)
+  (conv2): Conv2d(6, 16, kernel_size=(5, 5), stride=(1, 1))
+  (relu2): ReLU()
+  (pool2): MaxPool2d(kernel_size=2, stride=2, padding=0)
+  (fc1): Linear(in_features=256, out_features=120, bias=True)
+  (relu3): ReLU()
+  (fc2): Linear(in_features=120, out_features=84, bias=True)
+  (relu4): ReLU()
+  (fc3): Linear(in_features=84, out_features=10, bias=True)
+  (relu5): ReLU()
+```
 ### [`train_CNN_network.py`](train_CNN_network.py)
 ***NOTE***: 这是跑完100个epoch的结果，上课的时候只需要跑20个epoch即可（正确率能到98%），20个epoch大概要跑10分钟左右，可以先让同学把代码跑起来，然后开始讲网络结构如何用pytorch写。讲完了基本上网络也训练完了，正好同学可以看一些训练结果。
 ![CNN result](/Module8/img/CNN%20result.png)
