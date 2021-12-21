@@ -55,7 +55,7 @@ Optional: 一篇关于卷积层中`卷积核大小`，`padding`，`stride`对于
 ## 2. 训练卷积神经网络
 > Bringing it all together
 
-*建议教学时长：25分钟*
+*建议教学时长：15分钟*
 
 ### [`LeNet_model.py`](LeNet_model_structure.py)
 ### [`train_CNN_network.py`](train_CNN_network.py)
