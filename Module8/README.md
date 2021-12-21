@@ -16,7 +16,7 @@
   - [**预告下节课内容**：](#预告下节课内容)
 
 ## 0. 课前Demo
-学习知识前先放一个最终手写数字识别的网页版Demo，向同学展示这门课的最终成果是如何的：https://www.cs.ryerson.ca/~aharley/vis/conv/
+学习知识前先放一个最终手写数字识别的网页版Demo，向同学展示这堂课的最终成果是如何的：https://www.cs.ryerson.ca/~aharley/vis/conv/
 ![CNN handwritten digit demo](/Module8/img/CNN%20demo.png)
 
 ## 1. 卷积神经网络核心
