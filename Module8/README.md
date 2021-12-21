@@ -5,9 +5,9 @@
   - [1. 卷积神经网络核心](#1-卷积神经网络核心)
     - [a. 继续Module7对于卷积的讨论，定义一些卷积层的超参数`hyperparameters`：](#a-继续module7对于卷积的讨论定义一些卷积层的超参数hyperparameters)
       - [建议使用下方可视化讲解：https://ezyang.github.io/convolution-visualizer/](#建议使用下方可视化讲解httpsezyanggithubioconvolution-visualizer)
+    - [***EXTRA***: output_size formula:](#extra-output_size-formula)
     - [b. 对于3d物体的卷积 (3d 卷积核 长度，宽度，深度 height x width x channel)](#b-对于3d物体的卷积-3d-卷积核-长度宽度深度-height-x-width-x-channel)
     - [c. 介绍一下简单的卷积网络结构 (从LeNet-5开始举例，最基础的卷积神经网络结构)](#c-介绍一下简单的卷积网络结构-从lenet-5开始举例最基础的卷积神经网络结构)
-    - [***EXTRA***: output_size formula:](#extra-output_size-formula)
   - [2. 训练卷积神经网络](#2-训练卷积神经网络)
     - [`LeNet_model.py`](#lenet_modelpy)
     - [`train_CNN_network.py`](#train_cnn_networkpy)
@@ -33,6 +33,11 @@
 #### 建议使用下方可视化讲解：https://ezyang.github.io/convolution-visualizer/
 ![kernel demo](/Module8/img/CNN%20interactive.png)
 
+### ***EXTRA***: output_size formula:
+![output_size_formula](/Module8/img/n_out%20formula.png)
+- 比如拿最简单的例子，一个6x6的图片(n_in = 6)，卷积核大小3x3 (kernel size = 3)，padding = 0, stride = 1
+  - (6 + 2 * 0 - 3)/1 + 1 = 4 --> n_out (output size)
+  
 ### b. 对于3d物体的卷积 (3d 卷积核 长度，宽度，深度 height x width x channel)
 ![conv_volume](/Module8/img/convolution_with_volume.gif)
 
@@ -41,10 +46,7 @@
 Q: 观察一下LeNet-5网络的特征，规律?
 - 特征图片大小逐渐变小，深度 (channel) 变深
 
-### ***EXTRA***: output_size formula:
-![output_size_formula](/Module8/img/n_out%20formula.png)
-- 比如拿最简单的例子，一个6x6的图片(n_in = 6)，卷积核大小3x3 (kernel size = 3)，padding = 0, stride = 1
-  - (6 + 2 * 0 - 3)/1 + 1 = 4 --> n_out (output size)
+
 
 
 Optional: 一篇关于卷积层中`卷积核大小`，`padding`，`stride`对于output feature image 形状的关系和影响: https://machinelearningmastery.com/padding-and-stride-for-convolutional-neural-networks/
