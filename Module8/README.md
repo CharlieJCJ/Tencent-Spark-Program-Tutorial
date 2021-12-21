@@ -58,7 +58,7 @@ Optional: 一篇关于卷积层中`卷积核大小`，`padding`，`stride`对于
 *建议教学时长：15分钟*
 
 ### [`LeNet_model.py`](LeNet_model_structure.py)
-
+> By Yann LeCun, a French computer scientist working primarily in the fields of machine learning, computer vision, mobile robotics, and computational neuroscience. The Silver Professor of the Courant Institute of Mathematical Sciences at New York University, and Vice President, Chief AI Scientist at Meta
 ```python
   (conv1): Conv2d(1, 6, kernel_size=(5, 5), stride=(1, 1))
   (relu1): ReLU()
