@@ -8,7 +8,6 @@
     - [b. 对于3d物体的卷积 (3d 卷积核 长度，宽度，深度 height x width x channel)](#b-对于3d物体的卷积-3d-卷积核-长度宽度深度-height-x-width-x-channel)
     - [c. 介绍一下简单的卷积网络结构 (从LeNet-5开始举例，最基础的卷积神经网络结构)](#c-介绍一下简单的卷积网络结构-从lenet-5开始举例最基础的卷积神经网络结构)
     - [***EXTRA***: output_size formula:](#extra-output_size-formula)
-      - [浅谈卷积网络每一层的作用](#浅谈卷积网络每一层的作用)
   - [2. 训练卷积神经网络](#2-训练卷积神经网络)
     - [`LeNet_model.py`](#lenet_modelpy)
     - [`train_CNN_network.py`](#train_cnn_networkpy)
@@ -46,8 +45,6 @@ Q: 观察一下LeNet-5网络的特征，规律?
 ![output_size_formula](/Module8/img/n_out%20formula.png)
 - 比如拿最简单的例子，一个6x6的图片(n_in = 6)，卷积核大小3x3 (kernel size = 3)，padding = 0, stride = 1
   - (6 + 2 * 0 - 3)/1 + 1 = 4 --> n_out (output size)
-
-#### 浅谈卷积网络每一层的作用
 
 
 Optional: 一篇关于卷积层中`卷积核大小`，`padding`，`stride`对于output feature image 形状的关系和影响: https://machinelearningmastery.com/padding-and-stride-for-convolutional-neural-networks/
