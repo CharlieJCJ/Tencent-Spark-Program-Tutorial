@@ -62,10 +62,10 @@ Optional: 一篇关于卷积层中`卷积核大小`，`padding`，`stride`对于
 ```python
   (conv1): Conv2d(1, 6, kernel_size=(5, 5), stride=(1, 1))
   (relu1): ReLU()
-  (pool1): MaxPool2d(kernel_size=2, stride=2, padding=0)
+  (pool1): MaxPool2d(kernel_size=2, stride=2)
   (conv2): Conv2d(6, 16, kernel_size=(5, 5), stride=(1, 1))
   (relu2): ReLU()
-  (pool2): MaxPool2d(kernel_size=2, stride=2, padding=0)
+  (pool2): MaxPool2d(kernel_size=2, stride=2)
   (fc1): Linear(in_features=256, out_features=120, bias=True)
   (relu3): ReLU()
   (fc2): Linear(in_features=120, out_features=84, bias=True)
