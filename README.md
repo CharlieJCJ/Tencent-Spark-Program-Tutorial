@@ -16,7 +16,7 @@
 ## **应用场景**：
 深圳中学ai+选修课，成都七中人工智能选必修课程。
 
-
+![卷积神经网络](/Module8/img/CNN%20interactive.png)
 # 目录：
 Module 1 ～ 3 基础知识储备 (以介绍常用python语句和python library为主)
 Module 4 ～ 7 人工智能-人工智能神经网络基础
