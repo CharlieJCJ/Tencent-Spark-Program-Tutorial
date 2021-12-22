@@ -15,11 +15,12 @@
   - [**预告下节课内容**：](#预告下节课内容)
 
 ## 0. 课前Demo
+*建议教学时长：5分钟*
 学习知识前先放一个最终手写数字识别的网页版Demo，向同学展示这堂课的最终成果是如何的：https://www.cs.ryerson.ca/~aharley/vis/conv/
 ![CNN handwritten digit demo](/Module8/img/CNN%20demo.png)
 
 ## 1. 卷积神经网络核心
-*建议教学时长：25分钟*
+*建议教学时长：20分钟*
 
 ### a. 继续Module7对于卷积的讨论，定义一些卷积层的超参数`hyperparameters`：
 1. Padding （让卷积核“*出界*”）
