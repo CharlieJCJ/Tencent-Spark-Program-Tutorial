@@ -20,11 +20,11 @@
 # 目录：
 Module 1 ～ 3 基础知识储备 (以介绍常用python语句和python library为主)
 Module 4 ～ 7 人工智能-人工智能神经网络基础
-1. Module 1: Python 基础与命令行基础
+1. [Module 1: Python 基础与命令行基础](/Module1)
 2. Module 2: Python 可视化工具 matplotlib
 3. Module 3: Numpy 基础
 4. Module 4: 人工智能神经网络基础-1 矩阵乘法，浅层神经网络 *感知机*
 5. Module 5: 人工智能神经网络基础-2 浅层神经网络 *感知机*
 6. Module 6: 人工智能神经网络基础-3 深度神经网络
 7. Module 7: 人工智能神经网络基础-4 卷积神经网络
-9. Module 8: 实战 coming out...
+8. Module 8: 实战 coming out...

@@ -105,7 +105,7 @@ class LeNet(nn.Module):
 
     def forward(self, x):
         y = F.relu(self.conv1(x))
-        # torch.nn.MaxPool2d(kernel_size, stride=None)
+        # torch.nn.functional.MaxPool2d(input, kernel_size, stride=None)
         # `kernel_size` – the size of the window to take a max over
         # `stride` – the stride of the window. Default value is `kernel_size`
         y = F.max_pool2d(y, 2)
