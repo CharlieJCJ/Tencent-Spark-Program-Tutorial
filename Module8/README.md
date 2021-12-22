@@ -16,6 +16,7 @@
 
 ## 0. 课前Demo
 *建议教学时长：5分钟*
+
 学习知识前先放一个最终手写数字识别的网页版Demo，向同学展示这堂课的最终成果是如何的：https://www.cs.ryerson.ca/~aharley/vis/conv/
 ![CNN handwritten digit demo](/Module8/img/CNN%20demo.png)
 
