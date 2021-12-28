@@ -17,14 +17,16 @@
 
 NOTE: 拍照的时候需要用比较粗一点的记号黑笔，白纸，开闪光灯的拍，尽量提高黑字和白底的光线和颜色差
 - 用opencv对于一张手写数字图片进行transformation
-![transformations]()
+![one_proc](/Module9/md_img/one_proc.png)
+![before-after](md_img/before_after.png)
 ### [`all-images-preprocess`](/Module9/all_img_preprocess.py)
-
 - 批量化处理，将`img_preprocess.py`对于整一个文件夹的img（原始图片）做处理
+![all_proc](/Module9/md_img/all_preproc.png)
 ### [`train+save_model`](/Module9/train_CNN_network_save.py)
-
+`model/cnn.pth`
 ### [`load_test_cnn`](/Module9/load_test_cnn_model.py)
 
+![transformed](/Module9/md_img/transformed.png)
 ```python
 # 分类结果：
 Transformed_image0.jpg 4
@@ -54,6 +56,10 @@ Hint:
 - 用`图像增广`
 
 ![CNN handwritten digit demo](/Module8/img/CNN%20demo.png)
+![small](/Module9/md_img/too%20small.png)
+![edge](/Module9/md_img/edge.png)
+![partial](md_img/partial.png)
+![angle](md_img/problem.png)
 
 ## 3. 图像增广引入
 
@@ -61,4 +67,6 @@ Hint:
 
 图像增广在对训练图像进行一系列的随机变化之后，生成相似但不同的训练样本，从而扩大了训练集的规模。 此外，应用图像增广的原因是，随机改变训练样本可以减少模型对某些属性的依赖，从而提高模型的泛化能力。 例如，我们可以以不同的方式裁剪图像，使感兴趣的对象出现在不同的位置，减少模型对于对象出现位置的依赖。 我们还可以调整亮度、颜色等因素来降低模型对颜色的敏感度。
 
-![position](/)
+![position](/Module9/md_img/img_aug0.png)
+![digit](/Module9/md_img/img_aug1.png)
+![lion](/Module9/md_img/img_aug2.png)
