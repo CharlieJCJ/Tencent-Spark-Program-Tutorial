@@ -2,10 +2,10 @@
 
 - [Module9: 运用卷积神经网络，`bad case`分析，图像增广引入](#module9-运用卷积神经网络bad-case分析图像增广引入)
   - [1. 运用卷积神经网络，分类同学自己的手写数字图片](#1-运用卷积神经网络分类同学自己的手写数字图片)
-    - [`one-image-preprocess`](#one-image-preprocess)
-    - [`all-images-preprocess`](#all-images-preprocess)
-    - [`train+save_model`](#trainsave_model)
-    - [`load_test_cnn`](#load_test_cnn)
+    - [`one-image-preprocess.py`](#one-image-preprocesspy)
+    - [`all-images-preprocess.py`](#all-images-preprocesspy)
+    - [`train+save_model.py`](#trainsave_modelpy)
+    - [`load_test_cnn.py`](#load_test_cnnpy)
   - [2. 使用手写数字可视化来看看网络对于哪些数字的分类效果不佳 - `bad case`分析](#2-使用手写数字可视化来看看网络对于哪些数字的分类效果不佳---bad-case分析)
   - [3. 图像增广引入](#3-图像增广引入)
 
@@ -13,7 +13,7 @@
 
 *建议教学时长：25分钟*
 
-### [`one-image-preprocess`](/Module9/img_preprocess.py)
+### [`one-image-preprocess.py`](/Module9/img_preprocess.py)
 
 NOTE: 拍照的时候需要用比较粗一点的记号黑笔，白纸，开闪光灯的拍，尽量提高黑字和白底的光线和颜色差
 
@@ -23,16 +23,16 @@ NOTE: 拍照的时候需要用比较粗一点的记号黑笔，白纸，开闪�
 3. 颜色反向
 4. 调整大小
 
-![bw](/Module9/md_img/b-w.png)
+![bw](/Module9/md_img/b-w.png)  
 - 用opencv对于一张手写数字图片进行transformation
 ![one_proc](/Module9/md_img/one_proc.png)
 ![before-after](md_img/before_after.png)
-### [`all-images-preprocess`](/Module9/all_img_preprocess.py)
+### [`all-images-preprocess.py`](/Module9/all_img_preprocess.py)
 - 批量化处理，将`img_preprocess.py`对于整一个文件夹的img（原始图片）做处理
 ![all_proc](/Module9/md_img/all_preproc.png)
-### [`train+save_model`](/Module9/train_CNN_network_save.py)
+### [`train+save_model.py`](/Module9/train_CNN_network_save.py)
 `model/cnn.pth`
-### [`load_test_cnn`](/Module9/load_test_cnn_model.py)
+### [`load_test_cnn.py`](/Module9/load_test_cnn_model.py)
 
 ![transformed](/Module9/md_img/transformed.png)
 ```python
