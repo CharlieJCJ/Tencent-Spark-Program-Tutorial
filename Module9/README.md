@@ -16,6 +16,14 @@
 ### [`one-image-preprocess`](/Module9/img_preprocess.py)
 
 NOTE: 拍照的时候需要用比较粗一点的记号黑笔，白纸，开闪光灯的拍，尽量提高黑字和白底的光线和颜色差
+
+预处理步骤：
+1. 读取图片的灰度图
+2. 灰度图阈值处理
+3. 颜色反向
+4. 调整大小
+
+![bw](/Module9/md_img/b-w.png)
 - 用opencv对于一张手写数字图片进行transformation
 ![one_proc](/Module9/md_img/one_proc.png)
 ![before-after](md_img/before_after.png)
