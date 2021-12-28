@@ -53,13 +53,19 @@ Hint:
 4. 数字在框框里不完整（部分数字出现在框框中）
   
 引导同学们想想如何解决这种问题，能让分类模型在现实生活中效果更佳鲁棒 
-- 用`图像增广`
+- （可能有些同学会说对这种图像做修正，比如如果图像旋转了30度，就把它旋转回来。但是现实情况下情况复杂的多，我们需要从训练数据集上做些操作，使得模型在现实场景下有更强的泛化性）
+- 用`图像增广` （看第3部分）
 
 ![CNN handwritten digit demo](/Module8/img/CNN%20demo.png)
+- 正常
 ![small](/Module9/md_img/too%20small.png)
+- 数字相较于整个框框太小了
 ![edge](/Module9/md_img/edge.png)
+- 数字接近于框框边缘，不在中心位置
 ![partial](md_img/partial.png)
+- 部分数字在框框当中
 ![angle](md_img/problem.png)
+- 手写数字存在一定角度的旋转
 
 ## 3. 图像增广引入
 
