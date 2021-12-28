@@ -6,13 +6,16 @@ import torchvision.transforms as transforms
 import matplotlib.pyplot as plt
 import torch.nn as nn
 import torch.nn.functional as F
-
+from PIL import *
+import os
 
 # how many samples per batch to load
 batch_size = 20
 
 # number of epochs to train the model
 n_epochs = 20  # suggest training between 20-50 epochs
+
+directory = './transformed_hand_written_digits'
 
 # convert data to torch.FloatTensor
 transform = transforms.ToTensor()
@@ -57,74 +60,96 @@ model = LeNet()
 print(model)
 model.load_state_dict(torch.load('./model/cnn.pth'))
 
-# specify loss function
-criterion = nn.CrossEntropyLoss()
-# specify optimizer
-optimizer = torch.optim.SGD(model.parameters(), lr=0.01)
+test_transforms = transforms.Compose([transforms.Resize(28),
+                                      transforms.ToTensor(),
+                                     ])
+imsize = 28
+loader = transforms.Compose([transforms.Scale(imsize), transforms.ToTensor()])
+
+def image_loader(image_name):
+    """load image, returns cuda tensor"""
+    image = Image.open(image_name)
+    image = loader(image).float()
+    image = torch.autograd.Variable(image, requires_grad=True)
+    image = image.unsqueeze(0)  #this is for VGG, may not be needed for ResNet
+    return image 
+
+for image in sorted(os.listdir(directory)):
+    if image == '.DS_Store':
+        continue
+    img = image_loader(os.path.join(directory, image))
+    print(image, np.argmax(model(img).detach().numpy()))
 
 
-# initialize lists to monitor test loss and accuracy
-test_loss = 0.0
-class_correct = list(0. for i in range(10))
-class_total = list(0. for i in range(10))
 
-model.eval() # prep model for *evaluation*
-
+# # specify loss function
+# criterion = nn.CrossEntropyLoss()
+# # specify optimizer
+# optimizer = torch.optim.SGD(model.parameters(), lr=0.01)
 
 
+# # initialize lists to monitor test loss and accuracy
+# test_loss = 0.0
+# class_correct = list(0. for i in range(10))
+# class_total = list(0. for i in range(10))
 
-for data, target in test_loader:
-    # forward pass: compute predicted outputs by passing inputs to the model
-    output = model(data)
-    # calculate the loss
-    loss = criterion(output, target)
-    # update test loss 
-    test_loss += loss.item()*data.size(0)
-    # convert output probabilities to predicted class
-    _, pred = torch.max(output, 1)
-    # compare predictions to true label
-    correct = np.squeeze(pred.eq(target.data.view_as(pred)))
-    print(correct, pred)
-    # calculate test accuracy for each object class
-    for i in range(batch_size):
-        label = target.data[i]
-        class_correct[label] += correct[i].item()
-        class_total[label] += 1
-
-# calculate and print avg test loss
-test_loss = test_loss/len(test_loader.dataset)
-print('Test Loss: {:.6f}\n'.format(test_loss))
-
-for i in range(10):
-    if class_total[i] > 0:
-        print('Test Accuracy of %5s: %2d%% (%2d/%2d)' % (
-            str(i), 100 * class_correct[i] / class_total[i],
-            np.sum(class_correct[i]), np.sum(class_total[i])))
-    else:
-        print('Test Accuracy of %5s: N/A (no training examples)' % (class_correct[i]))
-
-print('\nTest Accuracy (Overall): %2d%% (%2d/%2d)' % (
-    100. * np.sum(class_correct) / np.sum(class_total),
-    np.sum(class_correct), np.sum(class_total)))
+# model.eval() # prep model for *evaluation*
 
 
-# obtain one batch of test images
-dataiter = iter(test_loader)
-images, labels = dataiter.next()
 
-# get sample outputs
-output = model(images)
-# convert output probabilities to predicted class
-_, preds = torch.max(output, 1)
-# prep images for display
-images = images.numpy()
 
-# plot the images in the batch, along with predicted and true labels
-fig = plt.figure(figsize=(25, 4))
-for idx in np.arange(20):
-    ax = fig.add_subplot(2, 10, idx+1, xticks=[], yticks=[])
-    ax.imshow(np.squeeze(images[idx]), cmap='gray')
-    ax.set_title("{} ({})".format(str(preds[idx].item()), str(labels[idx].item())),
-                 color=("green" if preds[idx]==labels[idx] else "red"))
+# for data, target in test_loader:
+#     # forward pass: compute predicted outputs by passing inputs to the model
+#     output = model(data)
+#     # calculate the loss
+#     loss = criterion(output, target)
+#     # update test loss 
+#     test_loss += loss.item()*data.size(0)
+#     # convert output probabilities to predicted class
+#     _, pred = torch.max(output, 1)
+#     # compare predictions to true label
+#     correct = np.squeeze(pred.eq(target.data.view_as(pred)))
+#     print(correct, pred)
+#     # calculate test accuracy for each object class
+#     for i in range(batch_size):
+#         label = target.data[i]
+#         class_correct[label] += correct[i].item()
+#         class_total[label] += 1
 
-plt.show()
+# # calculate and print avg test loss
+# test_loss = test_loss/len(test_loader.dataset)
+# print('Test Loss: {:.6f}\n'.format(test_loss))
+
+# for i in range(10):
+#     if class_total[i] > 0:
+#         print('Test Accuracy of %5s: %2d%% (%2d/%2d)' % (
+#             str(i), 100 * class_correct[i] / class_total[i],
+#             np.sum(class_correct[i]), np.sum(class_total[i])))
+#     else:
+#         print('Test Accuracy of %5s: N/A (no training examples)' % (class_correct[i]))
+
+# print('\nTest Accuracy (Overall): %2d%% (%2d/%2d)' % (
+#     100. * np.sum(class_correct) / np.sum(class_total),
+#     np.sum(class_correct), np.sum(class_total)))
+
+
+# # obtain one batch of test images
+# dataiter = iter(test_loader)
+# images, labels = dataiter.next()
+
+# # get sample outputs
+# output = model(images)
+# # convert output probabilities to predicted class
+# _, preds = torch.max(output, 1)
+# # prep images for display
+# images = images.numpy()
+
+# # plot the images in the batch, along with predicted and true labels
+# fig = plt.figure(figsize=(25, 4))
+# for idx in np.arange(20):
+#     ax = fig.add_subplot(2, 10, idx+1, xticks=[], yticks=[])
+#     ax.imshow(np.squeeze(images[idx]), cmap='gray')
+#     ax.set_title("{} ({})".format(str(preds[idx].item()), str(labels[idx].item())),
+#                  color=("green" if preds[idx]==labels[idx] else "red"))
+
+# plt.show()

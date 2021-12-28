@@ -11,7 +11,7 @@ import torch.nn.functional as F
 batch_size = 20
 
 # number of epochs to train the model
-n_epochs = 3  # suggest training between 20-50 epochs
+n_epochs = 100 # suggest training between 20-50 epochs
 
 # convert data to torch.FloatTensor
 transform = transforms.ToTensor()
