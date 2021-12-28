@@ -1,6 +1,6 @@
-# 运用卷积神经网络，`bad case`分析，图像增广引入
+# Module9: 运用卷积神经网络，`bad case`分析，图像增广引入
 
-- [运用卷积神经网络，`bad case`分析，图像增广引入](#运用卷积神经网络bad-case分析图像增广引入)
+- [Module9: 运用卷积神经网络，`bad case`分析，图像增广引入](#module9-运用卷积神经网络bad-case分析图像增广引入)
   - [1. 运用卷积神经网络，分类同学自己的手写数字图片](#1-运用卷积神经网络分类同学自己的手写数字图片)
     - [`one-image-preprocess`](#one-image-preprocess)
     - [`all-images-preprocess`](#all-images-preprocess)
