@@ -4,8 +4,8 @@
   - [1. 运用卷积神经网络，分类同学自己的手写数字图片](#1-运用卷积神经网络分类同学自己的手写数字图片)
     - [`one-image-preprocess.py`](#one-image-preprocesspy)
     - [`all-images-preprocess.py`](#all-images-preprocesspy)
-    - [`train+save_model.py`](#trainsave_modelpy)
-    - [`load_test_cnn.py`](#load_test_cnnpy)
+    - [`train_CNN_network_save.py`](#train_cnn_network_savepy)
+    - [`load_test_cnn_model.py`](#load_test_cnn_modelpy)
   - [2. 使用手写数字可视化来看看网络对于哪些数字的分类效果不佳 - `bad case`分析](#2-使用手写数字可视化来看看网络对于哪些数字的分类效果不佳---bad-case分析)
   - [3. 图像增广引入](#3-图像增广引入)
 
@@ -30,9 +30,9 @@ NOTE: 拍照的时候需要用比较粗一点的记号黑笔，白纸，开闪�
 ### [`all-images-preprocess.py`](/Module9/all_img_preprocess.py)
 - 批量化处理，将`img_preprocess.py`对于整一个文件夹的img（原始图片）做处理
 ![all_proc](/Module9/md_img/all_preproc.png)
-### [`train+save_model.py`](/Module9/train_CNN_network_save.py)
+### [`train_CNN_network_save.py`](/Module9/train_CNN_network_save.py)
 `model/cnn.pth`
-### [`load_test_cnn.py`](/Module9/load_test_cnn_model.py)
+### [`load_test_cnn_model.py`](/Module9/load_test_cnn_model.py)
 
 ![transformed](/Module9/md_img/transformed.png)
 ```python

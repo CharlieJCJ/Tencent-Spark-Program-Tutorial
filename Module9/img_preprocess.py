@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import os 
 
-image = "img8.jpeg"
+image = "img2.jpeg"
 directory= "./img"
 print("Joined image path is :", os.path.join(directory, image))
 path = os.path.join(directory, image)

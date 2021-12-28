@@ -9,6 +9,7 @@ directory= "./img"
 print(os.listdir(directory))
 
 images_names = os.listdir(directory); images_names.remove('.DS_Store')
+print(images_names)
 for ind, image in enumerate(images_names):
     if image == '.DS_Store':
         continue
