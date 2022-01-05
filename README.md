@@ -1,6 +1,6 @@
 # 腾讯星火计划 AI 开发实践
 
-> NOTE: 现在前三章材料设置为public view，第四到第九章的代码和教材为private view
+> NOTE: 现在前三章材料设置为public view，第四到第九章的代码和教材为private view，只能看到课程相关图片
 
 ## **课程开发**：
 
